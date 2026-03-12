@@ -3,151 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIAL Engine | The Google Drive CRM</title>
+    <title>DIAL ENGINE | The Next-Gen Drive CRM</title>
     <style>
-        /* --- FRUTIGER AERO AESTHETIC --- */
-        :root {
-            --glossy-blue: linear-gradient(180deg, #82b1ff 0%, #2979ff 50%, #1c54b2 100%);
-            --glass: rgba(255, 255, 255, 0.7);
-            --text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
+        /* --- TOTAL FRUTIGER AERO OVERHAUL --- */
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: #b3e5fc url('https://www.transparenttextures.com/patterns/cubes.png');
-            color: #333;
             margin: 0;
-            padding: 0;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0078d7 0%, #00bfff 50%, #ffffff 100%);
+            background-attachment: fixed;
+            color: #1a1a1a;
+            overflow-x: hidden;
         }
 
-        .logo-container {
-            text-align: center;
+        header {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
             padding: 40px 20px;
-            background: var(--glossy-blue);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border-bottom: 3px solid #fff;
-        }
-        
-        .logo-image {
-            max-width: 200px;
-            height: auto;
-            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+            text-align: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .main-container {
-            max-width: 900px;
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 0px 4px 10px rgba(0, 120, 215, 0.5), 0px 0px 20px rgba(255, 255, 255, 0.8);
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .glass-container {
+            max-width: 1000px;
             margin: 40px auto;
-            padding: 30px;
-            background: var(--glass);
-            border-radius: 25px;
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.4);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
 
-        h1 { color: #fff; text-align: center; font-size: 2.5em; text-shadow: var(--text-shadow); margin-top: 10px; }
-        h2 { color: #1565c0; border-bottom: 2px solid #90caf9; padding-bottom: 10px; }
-        .hero-text { font-size: 1.3em; text-align: center; color: #0d47a1; font-weight: bold; margin-bottom: 30px; }
-
-        /* --- FEATURES --- */
+        /* --- THE REAL FEATURES --- */
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .feature-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 18px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: 0.2s;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(230,245,255,0.8) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-        .feature-card h3 { margin-top: 0; color: #1976d2; }
+        .feature-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,120,215,0.2);
+        }
 
-        /* --- ACTION BUTTONS --- */
-        .action-row {
+        h3 { color: #005a9e; font-size: 1.5rem; margin-top: 0; }
+        p { line-height: 1.6; color: #333; font-weight: 500; }
+
+        /* --- BUTTONS (Glossy/Bubble Style) --- */
+        .btn-row {
             display: flex;
             gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            margin-top: 50px;
+            justify-content: center;
         }
 
         .btn {
-            flex: 1;
-            min-width: 280px;
-            padding: 18px;
-            text-align: center;
+            padding: 18px 35px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
-            border-radius: 50px;
-            border: 2px solid #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            text-shadow: var(--text-shadow);
-            color: #fff;
+            font-size: 1.1rem;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.8);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
             transition: 0.2s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
-        .privacy-btn { background: var(--glossy-blue); }
-        .contact-btn { background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%); }
-
-        .btn:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
-
-        .demo-box {
-            background: #000;
-            color: #fff;
-            padding: 50px;
-            text-align: center;
-            border-radius: 20px;
-            margin-top: 40px;
-            border: 1px solid #444;
+        .privacy-btn {
+            background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
         }
+
+        .contact-btn {
+            background: linear-gradient(180deg, #66fb71 0%, #21ad2b 100%);
+        }
+
+        .btn:hover {
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+            filter: brightness(1.1);
+        }
+
     </style>
 </head>
 <body>
 
-<div class="logo-container">
-    <img src="logo.png" alt="DIAL Engine Logo" class="logo-image">
-    <h1>DIAL Engine V2.0</h1>
-</div>
+<header>
+    <h1>DIAL ENGINE</h1>
+</header>
 
-<div class="main-container">
-    <p class="hero-text">The Ultimate Lightweight CRM. Built for High-Performance Teams.</p>
+<div class="glass-container">
+    <p style="text-align: center; font-size: 1.4rem; color: #005a9e; font-weight: 800; margin-bottom: 40px;">
+        High-Octane Lead Management. Native Google Drive Architecture.
+    </p>
 
     <div class="feature-grid">
         <div class="feature-card">
-            <h3>🚫 No Extension Required</h3>
-            <p>Runs natively via Google Drive. No software, no setup, no browser tracking.</p>
+            <h3>🏠 Zillow Live-Sync</h3>
+            <p>Don't fly blind. The terminal pulls property data directly so you see the house and the value before you even hit dial.</p>
         </div>
         <div class="feature-card">
-            <h3>📈 Instant KPI Injection</h3>
-            <p>Every call status update is sent to your Master Dashboard in real-time.</p>
+            <h3>⚡ Click-to-Call VOIP</h3>
+            <p>Integrated dialing protocol. Connect your VOIP provider and fire off calls directly from the terminal interface.</p>
         </div>
         <div class="feature-card">
-            <h3>📂 Total Data Sovereignty</h3>
-            <p>You own your data. Everything stays inside your private Google Workspace.</p>
+            <h3>📊 Master KPI Injection</h3>
+            <p>Bypass the lag. Every status update hits the leadership dashboard instantly via private Apps Script triggers.</p>
         </div>
         <div class="feature-card">
-            <h3>💻 Custom Terminal</h3>
-            <p>Proprietary sidebar interface allows for rapid lead navigation and notes.</p>
+            <h3>📂 Zero-Footprint CRM</h3>
+            <p>No extensions. No browser tracking. Total data sovereignty within your own Google Workspace.</p>
         </div>
     </div>
 
-    <div class="demo-box">
-        <p><strong>Demo Video Protected</strong></p>
-        <p style="font-size: 0.9em; color: #aaa;">Data privacy enforced. Contact developer for private viewing.</p>
+    <div class="btn-row">
+        <a href="privacy.html" class="btn privacy-btn">Privacy Policy</a>
+        <a href="mailto:yahyaadillapro@gmail.com?subject=Dial Engine Inquiry" class="btn contact-btn">yahyaadillapro@gmail.com</a>
     </div>
-
-    <div class="action-row">
-        <a href="privacy-policy.html" class="btn privacy-btn">View Privacy Policy</a>
-        <a href="mailto:yahyaadillapro@gmail.com" class="btn contact-btn">Contact: yahyaadillapro@gmail.com</a>
-    </div>
-
 </div>
 
 </body>
