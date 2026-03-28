@@ -5,125 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIAL ENGINE | The Next-Gen Drive CRM</title>
     <style>
-        /* --- THE TRUE AERO OVERHAUL --- */
+        /* --- THE ULTIMATE AERO OVERHAUL --- */
         body {
             margin: 0;
-            font-family: "Segoe UI", "Trebuchet MS", "Lucida Grande", sans-serif;
+            font-family: "Segoe UI", "Trebuchet MS", sans-serif;
             background: #e0f7fa url('https://www.transparenttextures.com/patterns/clouds.png');
-            background: radial-gradient(circle at 50% -10%, #ffffff 0%, #d4f0ff 40%, #87ceeb 100%);
+            background: radial-gradient(circle at 50% 0%, #ffffff 0%, #b3e5fc 30%, #4facfe 80%, #0078d7 100%);
             background-attachment: fixed;
             color: #222;
-            line-height: 1.7;
+            line-height: 1.8;
             overflow-x: hidden;
         }
 
         /* --- HERO SECTION --- */
         .hero {
             text-align: center;
-            padding: 60px 20px 20px 20px;
+            padding: 80px 20px 40px 20px;
             position: relative;
         }
 
         .hero-banner {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1200px;
             height: auto;
-            mix-blend-mode: darken; /* Blends perfectly into the sky background */
-            filter: drop-shadow(0px 15px 25px rgba(0, 90, 158, 0.2));
-            animation: float 6s ease-in-out infinite;
+            mix-blend-mode: darken; 
+            filter: drop-shadow(0px 20px 30px rgba(0, 90, 158, 0.3));
+            animation: float 8s ease-in-out infinite;
         }
 
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-12px); }
             100% { transform: translateY(0px); }
         }
 
         .hero-tagline {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #005a9e;
             font-weight: 300;
-            margin-top: -20px;
-            margin-bottom: 60px;
+            margin-top: -10px;
+            margin-bottom: 20px;
             text-shadow: 1px 1px 0px rgba(255,255,255,1);
             letter-spacing: 1px;
         }
-
-        /* --- THE LONG-SCROLL GLASS PANELS --- */
-        .glass-panel {
-            max-width: 1100px;
+        
+        .hero-subtext {
+            font-size: 1.2rem;
+            color: #111;
+            font-weight: 600;
+            max-width: 800px;
             margin: 0 auto 60px auto;
-            background: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-radius: 30px;
+        }
+
+        /* --- LONG-SCROLL GLASS PANELS --- */
+        .glass-panel {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 35px;
             border-top: 2px solid rgba(255, 255, 255, 1);
-            border-left: 1px solid rgba(255, 255, 255, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            border-right: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 50px;
-            box-shadow: 0 20px 50px rgba(0, 100, 200, 0.1), inset 0 0 20px rgba(255,255,255,0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 60px;
+            box-shadow: 0 25px 60px rgba(0, 90, 158, 0.15), inset 0 0 25px rgba(255,255,255,0.6);
             position: relative;
             overflow: hidden;
             box-sizing: border-box;
             width: 92%;
         }
 
-        /* Glossy sweep on panels */
+        /* Deep Glossy Sweep */
         .glass-panel::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; height: 120px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
+            top: 0; left: 0; right: 0; height: 150px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
             z-index: -1;
         }
 
-        /* Section Headers with the requested Cyan Gradient */
         .panel-title {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             margin-top: 0;
-            margin-bottom: 30px;
-            font-weight: 800;
+            margin-bottom: 40px;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: -0.5px;
-            /* THE CYAN GRADIENT YOU REQUESTED */
-            background: linear-gradient(to right, #00f2fe, #4facfe, #005a9e);
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #00f2fe, #0078d7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
-            border-bottom: 2px solid rgba(255,255,255,0.8);
-            padding-bottom: 15px;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));
+            border-bottom: 3px solid rgba(255,255,255,0.7);
+            padding-bottom: 10px;
         }
 
-        /* --- FEATURE ROWS (Replaces the Grid) --- */
-        .feature-row {
+        /* --- SPLIT LAYOUTS FOR DEEP DIVES --- */
+        .split-layout {
             display: flex;
-            justify-content: space-between;
-            gap: 40px;
+            gap: 50px;
+            align-items: flex-start;
         }
 
-        .feature-block {
+        .split-content {
             flex: 1;
         }
 
-        .feature-block h4 {
-            color: #005a9e;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .split-sidebar {
+            flex: 0.6;
+            background: rgba(255,255,255,0.4);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: inset 0 0 15px rgba(255,255,255,1), 0 10px 20px rgba(0,0,0,0.05);
         }
 
-        .feature-block p {
-            color: #333;
-            font-size: 1.05rem;
+        .feature-item {
+            margin-bottom: 30px;
+        }
+
+        .feature-item h4 {
+            color: #005a9e;
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            text-shadow: 1px 1px 0px rgba(255,255,255,1);
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
             margin: 0;
+            color: #222;
             font-weight: 500;
         }
 
-        /* --- GLOSSY BUTTONS (Matching the Privacy Header Gradient) --- */
+        /* --- DISCORD COMMAND TERMINAL VISUAL --- */
+        .command-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .command-list li {
+            background: rgba(0, 90, 158, 0.05);
+            margin-bottom: 10px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00f2fe;
+            font-family: monospace;
+            font-size: 1.05rem;
+            color: #004a99;
+            font-weight: bold;
+        }
+
+        .command-list span {
+            font-family: "Segoe UI", sans-serif;
+            color: #333;
+            font-weight: normal;
+            display: block;
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+
+        /* --- STANDARD GRID FOR SMALLER FEATURES --- */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-card {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-top: 2px solid rgba(255,255,255,1);
+            box-shadow: 0 10px 20px rgba(0, 100, 200, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 120, 215, 0.2);
+        }
+
+        .grid-card h4 {
+            color: #0078d7;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        /* --- CALL TO ACTION BUTTONS --- */
         .action-center {
             text-align: center;
             margin: 80px 0;
@@ -152,17 +228,9 @@
             overflow: hidden;
         }
 
-        /* Cyan/Aqua Button */
-        .privacy-btn { 
-            background: linear-gradient(180deg, #00f2fe 0%, #4facfe 100%); 
-        }
-        
-        /* Vibrant Green Button */
-        .contact-btn { 
-            background: linear-gradient(180deg, #5dfd69 0%, #119e1c 100%); 
-        }
+        .privacy-btn { background: linear-gradient(180deg, #00f2fe 0%, #4facfe 100%); }
+        .contact-btn { background: linear-gradient(180deg, #5dfd69 0%, #119e1c 100%); }
 
-        /* Top glossy reflection for buttons */
         .btn::after {
             content: '';
             position: absolute;
@@ -186,16 +254,13 @@
             padding: 8px 25px;
             border-radius: 30px;
             border: 1px solid rgba(255,255,255,1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 850px) {
-            .feature-row { flex-direction: column; gap: 30px; }
-            .hero-tagline { font-size: 1.4rem; }
-            .glass-panel { padding: 35px 20px; }
-            .panel-title { font-size: 1.8rem; }
-            .btn { max-width: 90%; font-size: 1.1rem; padding: 18px; }
+        @media (max-width: 900px) {
+            .split-layout { flex-direction: column; }
+            .split-sidebar { width: 100%; box-sizing: border-box; }
+            .panel-title { font-size: 2.2rem; }
+            .glass-panel { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -204,58 +269,115 @@
     <div class="hero">
         <img src="banner.jpg" alt="Dial Engine Architecture" class="hero-banner">
         <div class="hero-tagline">Native Google Architecture. Enterprise-Grade Performance.</div>
+        <div class="hero-subtext">Dial Engine is not just a CRM—it is a fully autonomous, self-managing sales infrastructure. Built on Google Drive, powered by Supabase, and commanded entirely through Discord.</div>
     </div>
 
     <div class="glass-panel">
-        <h2 class="panel-title">Deployment & Control</h2>
-        <div class="feature-row">
-            <div class="feature-block">
-                <h4>🤖 Discord Command Center</h4>
-                <p>Manage your entire sales floor without leaving Discord. Hire, fire, audit, and dispense leads globally using intuitive slash commands routed directly to your database.</p>
+        <h2 class="panel-title">The Manager Hub & KPI Radar</h2>
+        <div class="split-layout">
+            <div class="split-content">
+                <div class="feature-item">
+                    <h4>📡 60-Second Background Radar</h4>
+                    <p>Total operational oversight. An asynchronous Python task continually scans every agent's terminal. When a lead is marked as "TRANSFER", the system instantly pings your Discord management channel with full property and contact details.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📊 Automated Master Database</h4>
+                    <p>Forget manual spreadsheets. The Master Hub acts as the single source of truth, automatically logging agent names, Discord IDs, generated UUIDs, status, and CRM links the moment they are hired.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🏆 Daily Leaderboard Generation</h4>
+                    <p>Built-in gamification. The system continuously tallies dials and booked transfers, generating a clean KPI snapshot that can be broadcasted directly to your team's #leaderboard channel with a single command.</p>
+                </div>
             </div>
-            <div class="feature-block">
-                <h4>🏦 Supabase Lead Vault</h4>
-                <p>Powered by ultra-fast PostgreSQL. Concurrent lock-and-dispense technology guarantees that two agents will never call the same lead at the same time.</p>
-            </div>
-            <div class="feature-block">
-                <h4>⚡ 1-Click Onboarding</h4>
-                <p>Scale instantly. One command provisions SIP credentials, clones a dedicated CRM sheet, assigns server roles, and DMs the new hire their complete setup instructions.</p>
+            <div class="split-sidebar">
+                <h4 style="color:#005a9e; margin-top:0;">SIP Inventory Automation</h4>
+                <p>Scaling a floor requires phone numbers. Dial Engine maintains a live SIP Inventory sheet.</p>
+                <br>
+                <p>When an agent is hired, the system seamlessly pulls an available <strong>BulkVS SIP credential</strong>, assigns it to their unique UUID, and DMs them the exact UDP configuration for Linphone. When fired, the SIP is instantly scrubbed and returned to the "Available" pool.</p>
             </div>
         </div>
     </div>
 
     <div class="glass-panel">
-        <h2 class="panel-title">Live Operations</h2>
-        <div class="feature-row">
-            <div class="feature-block">
-                <h4>🔀 Dynamic Batch Shuffling</h4>
-                <p>Beat list fatigue with 'Mix & Match'. Instantly wipe the floor's CRMs, shuffle the master database, and deal a randomized hand of fresh leads to keep agent momentum high.</p>
+        <h2 class="panel-title">Instant-Deploy Agent Terminals</h2>
+        <div class="feature-grid">
+            <div class="grid-card">
+                <h4>⚡ Auto-Cloning Architecture</h4>
+                <p>No more manual sharing. Firing the hire command commands the Google Drive API to perfectly clone the master CRM template, rename it, organize it into the Dialer Folder, and grant Writer access to the agent's email.</p>
             </div>
-            <div class="feature-block">
-                <h4>🚨 Live Transfer Radar</h4>
-                <p>Never miss a closing opportunity. When an agent lands a transfer, the system instantly pings your management channel with full property and contact details.</p>
+            <div class="grid-card">
+                <h4>🏡 Zillow Data Injection</h4>
+                <p>Agents dial with leverage. The terminal provides a live, 15-column matrix including property addresses, cities, and states. Agents can pull estimated values and street views directly inside their Spreadsheet Terminal before the call even connects.</p>
             </div>
-            <div class="feature-block">
-                <h4>🏡 Zillow Injection</h4>
-                <p>Live property data view. See the estimated value, beds/baths, and street view directly inside your Google Sheet terminal before the call even connects.</p>
+            <div class="grid-card">
+                <h4>🔐 Zero Extensions Required</h4>
+                <p>Operate under a "Zero-Footprint" philosophy. Because the entire system relies on Google Apps Script and secure API bridging, your agents require zero heavy browser extensions, eliminating the risk of credential scraping or lag.</p>
             </div>
         </div>
     </div>
 
     <div class="glass-panel">
-        <h2 class="panel-title">Security & Ecosystem</h2>
-        <div class="feature-row">
-            <div class="feature-block">
-                <h4>🧹 Automated Offboarding</h4>
-                <p>Protect your data. Firing an agent automatically revokes system access, deletes their CRM file from Google Drive, and returns their unused leads back to the main vault.</p>
+        <h2 class="panel-title">PostgreSQL Lead Vault</h2>
+        <div class="split-layout">
+            <div class="split-content">
+                <div class="feature-item">
+                    <h4>🚦 Concurrent "Skip Locked" Tech</h4>
+                    <p>Prevent the nightmare of double-calling. The vault utilizes advanced PostgreSQL locking mechanisms. When 50 agents click "Get Leads" simultaneously, the database instantly reserves strictly unique batches for every single request.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔀 Dynamic Batch Shuffling</h4>
+                    <p>Beat list fatigue instantly. Operation <strong>Mix & Match</strong> allows admins to sweep all un-transferred leads from every agent's CRM, shuffle the entire database pool, and redeploy completely randomized batches to keep momentum high.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🥞 The "Stacking" Engine</h4>
+                    <p>Global deployment made easy. Need to feed the floor? The system finds all active agents and appends a fresh stack of leads to the absolute bottom of their current list, without interrupting their workflow or deleting existing notes.</p>
+                </div>
             </div>
-            <div class="feature-block">
-                <h4>📊 Master KPI Dashboard</h4>
-                <p>Instant leadership reporting. Agent dials, wins, and transfers are pushed to the Master Hub with zero delay, automatically updating your server's Daily Leaderboard.</p>
+        </div>
+    </div>
+
+    <div class="glass-panel">
+        <h2 class="panel-title">Discord Command Center</h2>
+        <p style="font-size: 1.15rem; font-weight: 500; margin-bottom: 30px;">Manage a 50-seat floor globally using purely intuitive slash commands. Everything is routed, authenticated, and executed in seconds.</p>
+        
+        <div class="split-layout">
+            <div class="split-content">
+                <ul class="command-list">
+                    <li>!hire @User [Email] [Name]<span>Clones CRM, assigns SIP, applies roles, and DMs station setup.</span></li>
+                    <li>!fire @User<span>Revokes access, deletes Google Drive file, and recycles leads.</span></li>
+                    <li>!dispense @User [Amt]<span>Pulls fresh leads from the Supabase vault to a specific agent.</span></li>
+                    <li>!dispense_everyone [Amt]<span>Mass global injection to all active agent CRMs simultaneously.</span></li>
+                    <li>!mix_match [Amt]<span>Recycles the entire floor and redistributes randomized batches.</span></li>
+                    <li>!reset_everyone<span>Global panic button. Wipes all CRMs and returns leads to vault.</span></li>
+                </ul>
             </div>
-            <div class="feature-block">
-                <h4>📂 Zero Extensions</h4>
-                <p>No heavy software to install. No background tracking. Total privacy, blistering speed, and cloud-native integration strictly within the Google Workspace ecosystem.</p>
+            <div class="split-content">
+                <ul class="command-list">
+                    <li>!leaderboard<span>Broadcasts the Daily Leaderboard rankings to the team channel.</span></li>
+                    <li>!stats<span>Silently DMs management a private snapshot of top active dialers.</span></li>
+                    <li>!check @User<span>View a specific agent's current KPI stats and active SIP credentials.</span></li>
+                    <li>!transfers [@User]<span>Audit the last 10 successful transfers directly from the database ledger.</span></li>
+                    <li>!vault<span>Instantly returns an exact count of fresh leads available in the pool.</span></li>
+                    <li>!recycle @User<span>Wipes an underperforming agent's CRM and returns leads to the vault.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel">
+        <h2 class="panel-title">Security & Telemetry</h2>
+        <div class="feature-grid">
+            <div class="grid-card">
+                <h4>🛡️ Fernet AES Encryption</h4>
+                <p>The Dial Engine does not just log data—it locks it down. All internal terminal operations are encrypted using cryptography.fernet and stored locally in a secure `.vault` file, unreadable by unauthorized parties.</p>
+            </div>
+            <div class="grid-card">
+                <h4>🗑️ Total Data Eradication</h4>
+                <p>When an agent's contract is terminated via `!fire`, the system doesn't just revoke access. It forces the Google Drive API to permanently delete their CRM file from existence, ensuring your proprietary data cannot be exported post-termination.</p>
+            </div>
+            <div class="grid-card">
+                <h4>📡 Live Streamed Logs</h4>
+                <p>Complete transparency for administrators. System actions, radar syncs, and command executions are stripped of secure data and streamed asynchronously to a private Discord logging channel in real-time.</p>
             </div>
         </div>
     </div>
