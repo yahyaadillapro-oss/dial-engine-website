@@ -3,77 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy | DIAL ENGINE</title>
+    <title>Privacy Policy | DIAL ENGINE™</title>
     <style>
-        /* --- AERO GLASS AESTHETIC --- */
+        /* --- UNIFIED FRUTIGER AERO AESTHETIC --- */
         body {
             margin: 0;
-            font-family: "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #00bfff 0%, #0078d7 50%, #ffffff 100%);
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #e0f7fa url('https://www.transparenttextures.com/patterns/clouds.png');
+            background: radial-gradient(circle at 50% 0%, #ffffff 0%, #b3e5fc 30%, #4facfe 80%, #0078d7 100%);
             background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
         }
 
         .glass-card {
-            max-width: 700px;
-            margin: 20px;
-            background: rgba(255, 255, 255, 0.75);
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border-radius: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            padding: 50px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+            border-top: 2px solid rgba(255, 255, 255, 1);
+            border-left: 1px solid rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 50px 60px;
+            box-shadow: 0 25px 60px rgba(0, 90, 158, 0.15), inset 0 0 20px rgba(255,255,255,0.7);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .glossy-header {
             background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
-            margin: -50px -50px 30px -50px;
-            padding: 30px;
-            border-radius: 40px 40px 0 0;
+            margin: -50px -60px 40px -60px;
+            padding: 35px 30px;
             text-align: center;
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid rgba(255,255,255,0.9);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.2);
+            position: relative;
+        }
+        
+        .glossy-header::before {
+            content: '';
+            position: absolute;
+            top: 2px; left: 2px; right: 2px; height: 45%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
         }
 
         h1 {
-            color: white;
-            margin: 0;
-            text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-            font-size: 2rem;
+            color: white; margin: 0; font-size: 2.4rem; font-weight: 800; letter-spacing: 1px;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.2); text-transform: uppercase;
         }
 
         h2 {
-            color: #005a9e;
-            font-size: 1.3rem;
-            border-bottom: 2px solid rgba(0, 120, 215, 0.2);
-            padding-bottom: 5px;
+            color: #005a9e; font-size: 1.3rem; margin-top: 35px; margin-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 120, 215, 0.2); padding-bottom: 8px;
         }
 
-        p, li {
-            color: #222;
-            line-height: 1.7;
-            font-weight: 500;
-        }
+        p { color: #222; font-size: 1.05rem; line-height: 1.7; font-weight: 500; text-align: left; margin-bottom: 15px; }
+        .highlight { font-weight: 800; color: #005a9e; }
+
+        .btn-container { text-align: center; margin-top: 50px; }
 
         .back-btn {
             display: inline-block;
-            margin-top: 30px;
+            position: relative;
             padding: 15px 40px;
-            background: linear-gradient(180deg, #66fb71 0%, #21ad2b 100%);
+            background: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%);
             color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 1px solid #fff;
-            transition: 0.2s;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 8px 20px rgba(0, 120, 215, 0.3), inset 0 -3px 10px rgba(0,0,0,0.15);
+            transition: 0.3s ease;
+            overflow: hidden;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .back-btn::after {
+            content: '';
+            position: absolute;
+            top: 2px; left: 2px; right: 2px; height: 45%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
+            border-radius: 50px 50px 100px 100px;
+            pointer-events: none;
         }
 
         .back-btn:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
+            transform: scale(1.05); filter: brightness(1.1);
+            box-shadow: 0 12px 25px rgba(0, 120, 215, 0.4), inset 0 -3px 10px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 700px) {
+            .glass-card { padding: 40px 25px; border-radius: 30px; }
+            .glossy-header { margin: -40px -25px 30px -25px; padding: 25px 20px; }
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -81,27 +115,29 @@
 
 <div class="glass-card">
     <div class="glossy-header">
-        <h1>PRIVACY POLICY</h1>
+        <h1>Privacy Policy</h1>
     </div>
 
-    <p><strong>Effective Date:</strong> March 12, 2026</p>
+    <p><span class="highlight">Effective Date:</span> March 12, 2026</p>
     
-    <p>DIAL ENGINE is a native Google Drive CRM. We operate under a "Zero-Footprint" philosophy, ensuring your data never leaves your personal ecosystem.</p>
+    <p>DIAL ENGINE™ is a native Google Drive CRM. We operate under a strict "Zero-Footprint" philosophy, ensuring your data never leaves your personal or corporate ecosystem.</p>
 
     <h2>1. Data Sovereignty</h2>
-    <p>We do not host your data. All property information from Zillow and lead details from your VOIP-ready sheets stay within your private Google Workspace. We have zero access to your spreadsheets.</p>
+    <p>We do not host, store, or process your lead data on third-party backend servers. All property information from Zillow and lead details from your VOIP-ready sheets stay exclusively within your private Google Workspace. We have absolute zero access to your spreadsheets.</p>
 
     <h2>2. App Logic & Triggers</h2>
-    <p>Our custom Apps Script logic runs locally within your account. The "Master KPI Injection" feature only transmits status updates between sheets <strong>you</strong> authorize. No third-party servers are involved.</p>
+    <p>Our custom automation logic runs locally within your Google account's trusted environment. Features such as "Master KPI Injection" only transmit status updates between sheets <span class="highlight">you</span> actively authorize. No external analytics databases are involved in core operations.</p>
 
-    <h2>3. Security</h2>
-    <p>By eliminating browser extensions, DIAL ENGINE removes the risk of credential scraping or background data collection common in traditional CRMs.</p>
+    <h2>3. Enhanced Security</h2>
+    <p>By eliminating the need for third-party browser extensions, DIAL ENGINE™ removes the severe risk of credential scraping, background screen recording, or passive data collection common in traditional SaaS CRMs.</p>
 
-    <h2>4. Contact</h2>
-    <p>Questions? Reach out to the developer:</p>
-    <p><strong>Email:</strong> <a href="mailto:yahyaadillapro@gmail.com" style="color: #005a9e;">yahyaadillapro@gmail.com</a></p>
+    <h2>4. Contact Administration</h2>
+    <p>For technical inquiries, compliance audits, or architecture questions, please reach out to the lead systems developer directly at:</p>
+    <p><span class="highlight">Email:</span> <a href="mailto:yahyaadillapro@gmail.com" style="color: #0072ff; text-decoration: none; font-weight: bold;">yahyaadillapro@gmail.com</a></p>
 
-    <a href="index.html" class="back-btn">← RETURN HOME</a>
+    <div class="btn-container">
+        <a href="index.html" class="back-btn">← RETURN HOME</a>
+    </div>
 </div>
 
 </body>
