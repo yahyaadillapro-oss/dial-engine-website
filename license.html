@@ -5,136 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software License | DIAL ENGINE™</title>
     <style>
-        /* --- UNIFIED FRUTIGER AERO AESTHETIC --- */
+        /* --- SHARP FRUTIGER AERO / MIRROR EDGE AESTHETIC --- */
         body {
             margin: 0;
-            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #e0f7fa url('https://www.transparenttextures.com/patterns/clouds.png');
-            background: radial-gradient(circle at 50% 0%, #ffffff 0%, #b3e5fc 30%, #4facfe 80%, #0078d7 100%);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #f4f7f9;
+            background: radial-gradient(circle at 50% -20%, #ffffff 0%, #e0eaf5 40%, #c4d7eb 100%);
             background-attachment: fixed;
-            min-height: 100vh;
+            color: #111827;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
             padding: 40px 20px;
-            box-sizing: border-box;
         }
 
         .glass-card {
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.55);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-radius: 40px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 2px;
             border-top: 2px solid rgba(255, 255, 255, 1);
-            border-left: 1px solid rgba(255, 255, 255, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.9);
             border-right: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 50px 60px;
-            box-shadow: 0 25px 60px rgba(0, 90, 158, 0.15), inset 0 0 20px rgba(255,255,255,0.7);
-            position: relative;
-            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0, 30, 60, 0.1), inset 0 1px 0 rgba(255,255,255,1);
             box-sizing: border-box;
         }
 
-        .glossy-header {
-            background: linear-gradient(180deg, #ff9a44 0%, #fc6076 100%);
-            margin: -50px -60px 40px -60px;
-            padding: 35px 30px;
-            text-align: center;
-            border-bottom: 2px solid rgba(255,255,255,0.9);
-            box-shadow: 0 10px 20px rgba(252, 96, 118, 0.2);
-            position: relative;
+        .doc-header {
+            border-bottom: 2px solid #004b87;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
+
+        h1 { color: #003366; margin: 0; font-size: 2.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; }
+        .subtitle { color: #666; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+
+        h2 { color: #004b87; font-size: 1.2rem; margin-top: 35px; margin-bottom: 10px; font-weight: 700; text-transform: uppercase; }
+        p { color: #333; font-size: 1rem; font-weight: 500; text-align: justify; margin-bottom: 15px; }
         
-        .glossy-header::before {
-            content: '';
-            position: absolute;
-            top: 2px; left: 2px; right: 2px; height: 45%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
-            pointer-events: none;
-        }
+        .highlight { font-weight: 700; color: #0066cc; }
 
-        h1 {
-            color: white; margin: 0; font-size: 2.2rem; font-weight: 800; letter-spacing: 1px;
-            text-shadow: 0px 2px 4px rgba(0,0,0,0.2); text-transform: uppercase;
-        }
-
-        h2 {
-            color: #005a9e; font-size: 1.3rem; margin-top: 35px; margin-bottom: 15px;
-            border-bottom: 2px solid rgba(0, 120, 215, 0.2); padding-bottom: 8px;
-        }
-
-        p { color: #222; font-size: 1.05rem; line-height: 1.7; font-weight: 500; text-align: justify; margin-bottom: 15px; }
-        .highlight { font-weight: 800; color: #005a9e; }
-
-        .btn-container { text-align: center; margin-top: 50px; }
-
+        .btn-container { margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; }
         .back-btn {
-            display: inline-block;
-            position: relative;
-            padding: 15px 40px;
-            background: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.05rem;
-            letter-spacing: 1px;
-            border: 1px solid rgba(255,255,255,0.8);
-            box-shadow: 0 8px 20px rgba(0, 120, 215, 0.3), inset 0 -3px 10px rgba(0,0,0,0.15);
-            transition: 0.3s ease;
-            overflow: hidden;
-            text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+            display: inline-block; padding: 10px 25px; font-weight: 700; font-size: 0.9rem;
+            text-transform: uppercase; text-decoration: none; border-radius: 2px;
+            background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+            color: #333; border: 1px solid #aaa; border-top: 1px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: all 0.2s;
         }
-
-        .back-btn::after {
-            content: '';
-            position: absolute;
-            top: 2px; left: 2px; right: 2px; height: 45%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
-            border-radius: 50px 50px 100px 100px;
-            pointer-events: none;
-        }
-
-        .back-btn:hover {
-            transform: scale(1.05); filter: brightness(1.1);
-            box-shadow: 0 12px 25px rgba(0, 120, 215, 0.4), inset 0 -3px 10px rgba(0,0,0,0.1);
-        }
+        .back-btn:hover { background: #fff; color: #004b87; }
 
         @media (max-width: 700px) {
-            .glass-card { padding: 40px 25px; border-radius: 30px; }
-            .glossy-header { margin: -40px -25px 30px -25px; padding: 25px 20px; }
+            .glass-card { padding: 40px 25px; }
             h1 { font-size: 1.8rem; }
-            p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="glass-card">
-    <div class="glossy-header">
+    <div class="doc-header">
         <h1>Standard Software License</h1>
+        <div class="subtitle">DIAL ENGINE™ - Terms of Deployment & Operations</div>
     </div>
 
-    <p style="text-align: center; color: #666; font-weight: 600; margin-bottom: 40px;">DIAL ENGINE™ - Terms of Deployment & Operations</p>
+    <h2>1. Software Ownership & Intellectual Property</h2>
+    <p>The Dial Engine™ software, including all backend logic, scripts, API infrastructure, telecommunications routing code, and database architecture (collectively, the "Software"), is the exclusive proprietary intellectual property of <span class="highlight">Mohamed Yahya Adilla</span> (the "Developer/Licensor").</p>
+    <p>The Software is licensed, not sold. Deployment of the Software to any corporate environment or cloud infrastructure does not transfer ownership, copyright, or access to the proprietary source code to the purchasing entity (the "Licensee").</p>
 
-    <h2>1. Ownership and Intellectual Property</h2>
-    <p>The Dial Engine™ software framework, including all associated logic, scripts, algorithms, API infrastructure, and data visualization architectures (collectively, the "Software"), is the exclusive, confidential, and proprietary intellectual property of <span class="highlight">Mohamed Yahya Adilla</span> (the "Architect").</p>
-    <p>Deployment of the Software to any server, PBX cloud infrastructure, or corporate environment does not convey, transfer, or assign any ownership rights, copyrights, or source code access to the deploying entity or client.</p>
+    <h2>2. Scope of the Standard License</h2>
+    <p>Upon payment of the standard <span class="highlight">$5,000 Upfront Deployment Fee</span>, the Licensee is granted a non-exclusive, non-transferable, and highly restricted operational license. This license strictly limits the use of the Software to a single, specified business branch. The Software may not be copied, templated, resold, or deployed to external businesses, franchises, or third-party real estate ventures without a separate, newly executed contract and deployment fee.</p>
 
-    <h2>2. Scope of License</h2>
-    <p>The Software is provided under a strictly limited, non-exclusive, non-transferable, and revocable <span class="highlight">Standard Software License</span> for the specific operational instance deployed. The deploying client is granted permission to utilize the automation features of the Software solely for internal business operations during the term of their active agreement.</p>
+    <h2>3. Maintenance & Operational Authority</h2>
+    <p>Continuous operation of the Software is contingent upon the <span class="highlight">$1,500 Monthly Maintenance Retainer</span>. This covers server uptime, PBX telecommunications management, and active technical support. The Developer retains absolute administrative authority over the backend infrastructure.</p>
 
-    <h2>3. Prohibitions</h2>
-    <p>Under no circumstances may the client, nor any third party acting on their behalf, copy, duplicate, reverse-engineer, modify, distribute, or claim ownership of the Dial Engine™ source code. The Software operates independently from the client's physical or digital telecommunications infrastructure.</p>
-
-    <h2>4. Termination of License</h2>
-    <p>Upon the termination of the active service agreement or retainer between the Architect and the client, this license is immediately revoked. The Architect retains the absolute right to offboard, wipe, and disconnect the Software instance from the client's infrastructure to protect proprietary logic.</p>
+    <h2>4. Termination & Revocation</h2>
+    <p>Under no circumstances may the Licensee copy, reverse-engineer, or attempt to extract the Dial Engine™ logic from the user interface. Should the active service agreement or monthly retainer be terminated, this license is immediately revoked. The Developer retains the right to securely disconnect, wipe, and offboard the Software instance to protect proprietary intellectual property.</p>
 
     <div class="btn-container">
-        <a href="index.html" class="back-btn">← RETURN HOME</a>
+        <a href="index.html" class="back-btn">← Return to Architecture</a>
     </div>
 </div>
 
