@@ -109,22 +109,22 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; text-align: center; overflow: hidden;
             font-family: inherit; color: #ffffff !important;
             
-            /* The Pure Glass Base */
-            background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(16px) saturate(120%); 
-            -webkit-backdrop-filter: blur(16px) saturate(120%);
+            /* The Pure Glass Base - High Saturation to force it to pop against dark backgrounds */
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(20px) saturate(150%); 
+            -webkit-backdrop-filter: blur(20px) saturate(150%);
             
             /* Sharp Glass Light Bleed Borders */
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-top: 1px solid rgba(255, 255, 255, 0.8);
-            border-left: 1px solid rgba(255, 255, 255, 0.5);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.9); /* Hard white highlight */
+            border-left: 1px solid rgba(255, 255, 255, 0.6);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Deep bottom shadow */
             
             /* External Drop Shadow + Internal Frost */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.4);
             
             /* Heavy text shadow to ensure text pops through the clear glass */
-            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.9);
             z-index: 1;
         }
 
@@ -144,27 +144,27 @@
         /* Top half hard-glass reflection */
         .btn::before, .nav-cta::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.02) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%);
             pointer-events: none; z-index: -1;
         }
 
         /* EMERALD TINT GLASS (Primary Licensing Button) */
         .btn-primary {
-            background: rgba(26, 168, 107, 0.15); /* Just a faint breath of green */
+            background: rgba(26, 168, 107, 0.3); /* Stronger green tint so it doesn't look gray */
         }
         .btn-primary:hover { 
-            background: rgba(26, 168, 107, 0.3);
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.8); 
+            background: rgba(26, 168, 107, 0.5);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.8); 
             transform: translateY(-2px); 
         }
 
-        /* CLEAR / CYAN TINT GLASS (Contact Developer & Email) */
+        /* CLEAR / WHITE FROST GLASS (Contact Developer & Email) */
         .btn-secondary, .nav-cta {
-            background: rgba(255, 255, 255, 0.08); /* Almost completely clear */
+            background: rgba(255, 255, 255, 0.2); /* Bright frosted white, highly visible */
         }
         .btn-secondary:hover, .nav-cta:hover { 
-            background: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.8); 
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.8); 
             transform: translateY(-2px); 
         }
 
