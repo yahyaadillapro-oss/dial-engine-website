@@ -119,8 +119,8 @@
         
         /* Dedicated Email Button Fix */
         .btn-email {
-            text-transform: none; /* Stops it from being uppercase */
-            font-weight: 600;     /* Thinner font so letters don't bleed */
+            text-transform: none;
+            font-weight: 600;
             letter-spacing: 0.5px;
             font-size: 1.05rem;
             padding: 14px 30px;
@@ -170,31 +170,38 @@
 
         /* --- FIXED MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
-            header { position: absolute; flex-direction: column; height: auto; padding: 20px; text-align: center; }
-            .nav-links { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-            .nav-links a { margin-left: 0; font-size: 0.95rem; }
-            .nav-cta { margin-left: 0; padding: 8px 20px; font-size: 0.95rem; }
+            /* Clean up the header so links aren't a mess */
+            header { position: absolute; flex-direction: column; height: auto; padding: 15px; text-align: center; }
+            .logo { font-size: 1.5rem; margin-bottom: 5px; }
+            .nav-links { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+            .nav-links a { margin-left: 0; font-size: 0.85rem; padding: 0 5px; }
+            .nav-cta { margin-left: 0; padding: 6px 16px; font-size: 0.85rem; margin-top: 5px; width: auto; }
             
-            .hero { flex-direction: column; text-align: center; padding-top: 180px; padding-bottom: 40px; gap: 30px; }
-            .hero-title { font-size: 2.4rem; }
-            .hero-subtitle { font-size: 1.1rem; margin: 0 auto 30px auto; }
+            /* Bring the text up and scale it properly */
+            .hero { flex-direction: column; text-align: center; padding-top: 150px; padding-bottom: 20px; gap: 20px; }
+            .hero-title { font-size: 2.2rem; margin-bottom: 10px; }
+            .hero-subtitle { font-size: 1rem; margin: 0 auto 20px auto; padding: 0 10px; }
             
-            .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 15px; }
-            .hero-actions .btn { width: 100%; box-sizing: border-box; padding: 15px 20px; }
+            /* Slim down the buttons so they don't look like bulky pills */
+            .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; gap: 12px; }
+            .hero-actions .btn { width: 100%; box-sizing: border-box; padding: 12px 15px; font-size: 0.95rem; }
+            .hero-actions .btn-email { font-size: 0.85rem; letter-spacing: 0; } /* Shrinks the long email address */
             
-            .hero-image-container { text-align: center; margin-top: 10px; }
-            .hero-image { max-width: 85%; margin: 0 auto; }
+            /* Force the software box to actually be visible */
+            .hero-image-container { text-align: center; margin-top: 15px; width: 100%; }
+            .hero-image { max-width: 100%; width: 300px; margin: 0 auto; } 
             
-            .container { padding: 0 15px 50px 15px; }
-            .glass-panel { padding: 35px 20px; margin-bottom: 40px; }
-            .panel-header { font-size: 1.7rem; margin-bottom: 25px; text-align: center; }
+            /* Give the panels normal mobile spacing */
+            .container { padding: 0 15px 40px 15px; }
+            .glass-panel { padding: 30px 20px; margin-bottom: 30px; }
+            .panel-header { font-size: 1.6rem; margin-bottom: 20px; text-align: center; }
             
-            .grid-3 { grid-template-columns: 1fr; gap: 25px; }
-            .feature-block { padding: 25px 20px; }
+            .grid-3 { grid-template-columns: 1fr; gap: 20px; }
+            .feature-block { padding: 20px 15px; }
             
-            .pricing-grid { grid-template-columns: 1fr; gap: 30px; }
-            .price-card { padding: 35px 20px; }
-            .price-amount { font-size: 3rem; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 25px; }
+            .price-card { padding: 30px 20px; }
+            .price-amount { font-size: 2.8rem; }
         }
     </style>
 </head>
