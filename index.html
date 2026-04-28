@@ -101,27 +101,30 @@
         .price-list li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.95rem; font-weight: 600; color: #222; }
         .price-list li::before { content: '✓'; color: #1aa86b; margin-right: 10px; font-weight: 900; font-size: 1.1rem; }
 
-        /* --- PURE GLASS TRANSPARENT BUTTONS --- */
+        /* --- PURE IOS/ACRYLIC GLASS BUTTONS --- */
         .btn, .nav-cta {
             position: relative; display: inline-block; 
             font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
-            border-radius: 6px; /* Clean, tight rounded corners like a real glass pane */
-            transition: all 0.3s ease; cursor: pointer; text-align: center; overflow: hidden;
+            border-radius: 8px; /* Slightly rounded edge like physical acrylic */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; text-align: center; overflow: hidden;
             font-family: inherit; color: #ffffff !important;
             
-            /* The Glass Effect */
-            background: rgba(255, 255, 255, 0.1); /* Highly transparent base */
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            /* The Pure Glass Base */
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(16px) saturate(120%); 
+            -webkit-backdrop-filter: blur(16px) saturate(120%);
             
-            /* Sharp Glass Borders */
+            /* Sharp Glass Light Bleed Borders */
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-top: 1px solid rgba(255, 255, 255, 0.8);
             border-left: 1px solid rgba(255, 255, 255, 0.5);
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             
-            /* Inner refraction and subtle drop shadow */
-            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 8px 20px rgba(0, 0, 0, 0.2);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            /* External Drop Shadow + Internal Frost */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+            
+            /* Heavy text shadow to ensure text pops through the clear glass */
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
             z-index: 1;
         }
 
@@ -138,30 +141,30 @@
             padding: 14px 30px;
         }
 
-        /* Top half glass sheen */
+        /* Top half hard-glass reflection */
         .btn::before, .nav-cta::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.02) 100%);
             pointer-events: none; z-index: -1;
         }
 
-        /* EMERALD TINT GLASS (Primary) */
+        /* EMERALD TINT GLASS (Primary Licensing Button) */
         .btn-primary {
-            background: rgba(26, 168, 107, 0.3); /* Slight emerald tint over the blur */
+            background: rgba(26, 168, 107, 0.15); /* Just a faint breath of green */
         }
         .btn-primary:hover { 
-            background: rgba(26, 168, 107, 0.5);
-            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 10px 25px rgba(0, 0, 0, 0.3); 
+            background: rgba(26, 168, 107, 0.3);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.8); 
             transform: translateY(-2px); 
         }
 
-        /* AERO BLUE TINT GLASS (Secondary) */
+        /* CLEAR / CYAN TINT GLASS (Contact Developer & Email) */
         .btn-secondary, .nav-cta {
-            background: rgba(0, 120, 215, 0.2); /* Slight blue tint over the blur */
+            background: rgba(255, 255, 255, 0.08); /* Almost completely clear */
         }
         .btn-secondary:hover, .nav-cta:hover { 
-            background: rgba(0, 120, 215, 0.4);
-            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 10px 25px rgba(0, 0, 0, 0.3); 
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.8); 
             transform: translateY(-2px); 
         }
 
@@ -171,35 +174,36 @@
             border-top: 1px solid rgba(255,255,255,0.2); margin-top: 40px; text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* --- FIXED MOBILE RESPONSIVENESS --- */
+        /* --- FIXED MOBILE RESPONSIVENESS (MIRRORS PC EXACTLY) --- */
         @media (max-width: 900px) {
             header { position: absolute; flex-direction: column; height: auto; padding: 15px; text-align: center; }
             .logo { font-size: 1.5rem; margin-bottom: 5px; }
             .nav-links { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
             .nav-links a { margin-left: 0; font-size: 0.85rem; padding: 0 5px; }
-            .nav-cta { margin-left: 0; padding: 6px 16px; font-size: 0.85rem; margin-top: 5px; width: auto; }
+            .nav-cta { margin-left: 0; margin-top: 5px; width: auto; } /* Inherits exact glass styling from PC */
             
-            .hero { flex-direction: column; text-align: center; padding-top: 150px; padding-bottom: 20px; gap: 20px; }
-            .hero-title { font-size: 2.2rem; margin-bottom: 10px; }
-            .hero-subtitle { font-size: 1rem; margin: 0 auto 20px auto; padding: 0 10px; }
+            .hero { flex-direction: column; text-align: center; padding-top: 160px; padding-bottom: 20px; gap: 20px; }
+            .hero-title { font-size: 2.4rem; margin-bottom: 10px; }
+            .hero-subtitle { font-size: 1.05rem; margin: 0 auto 20px auto; padding: 0 10px; }
             
-            .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; gap: 12px; }
-            .hero-actions .btn { width: 100%; box-sizing: border-box; padding: 12px 15px; font-size: 0.95rem; }
+            /* Keeps buttons full width but retains pure glass look */
+            .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 15px; }
+            .hero-actions .btn { width: 100%; box-sizing: border-box; padding: 14px 15px; font-size: 0.95rem; }
             .hero-actions .btn-email { font-size: 0.9rem; }
             
             .hero-image-container { text-align: center; margin-top: 15px; width: 100%; }
-            .hero-image { max-width: 100%; width: 300px; margin: 0 auto; } 
+            .hero-image { max-width: 100%; width: 320px; margin: 0 auto; } 
             
             .container { padding: 0 15px 40px 15px; }
-            .glass-panel { padding: 30px 20px; margin-bottom: 30px; }
-            .panel-header { font-size: 1.6rem; margin-bottom: 20px; text-align: center; }
+            .glass-panel { padding: 35px 20px; margin-bottom: 30px; } /* Retains exact mirror edge on mobile */
+            .panel-header { font-size: 1.8rem; margin-bottom: 20px; text-align: center; }
             
             .grid-3 { grid-template-columns: 1fr; gap: 20px; }
-            .feature-block { padding: 20px 15px; }
+            .feature-block { padding: 25px 20px; }
             
             .pricing-grid { grid-template-columns: 1fr; gap: 25px; }
-            .price-card { padding: 30px 20px; }
-            .price-amount { font-size: 2.8rem; }
+            .price-card { padding: 35px 20px; }
+            .price-amount { font-size: 3rem; }
         }
     </style>
 </head>
