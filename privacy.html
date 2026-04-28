@@ -6,34 +6,29 @@
     <title>Privacy & Data Policy | DIAL ENGINE™</title>
     <style>
         body {
-            margin: 0; font-family: "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
-            background: #0078d7; background: radial-gradient(circle at 50% 0%, #b3ebff 0%, #5cb8ff 30%, #0078d7 80%, #004b87 100%);
+            margin: 0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #025968; background: linear-gradient(135deg, #013a52 0%, #037d8a 50%, #68a834 100%);
             background-attachment: fixed; color: #111827; line-height: 1.6;
             -webkit-font-smoothing: antialiased; display: flex; justify-content: center; align-items: center;
-            min-height: 100vh; padding: 40px 20px;
-        }
-        body::before {
-            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.3; z-index: -1; pointer-events: none;
+            min-height: 100vh; padding: 40px 20px; box-sizing: border-box;
         }
         .glass-card {
             max-width: 850px; width: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
             backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            border-radius: 8px; border-top: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 6px; border-top: 2px solid rgba(255, 255, 255, 1);
             border-left: 1px solid rgba(255, 255, 255, 0.8); border-right: 1px solid rgba(255, 255, 255, 0.4);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4); padding: 60px;
-            box-shadow: 0 25px 50px rgba(0, 30, 60, 0.3), inset 0 20px 20px -20px rgba(255,255,255,0.8);
+            box-shadow: 0 25px 50px rgba(0, 30, 60, 0.4), inset 0 20px 20px -20px rgba(255,255,255,0.9);
             box-sizing: border-box;
         }
         .doc-header { border-bottom: 2px solid rgba(255,255,255,0.8); padding-bottom: 20px; margin-bottom: 40px; box-shadow: 0 1px 0 rgba(0,0,0,0.1); }
         h1 { color: #003366; margin: 0; font-size: 2.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; text-shadow: 0 1px 1px #fff; }
         
         .effective-date {
-            color: white; font-weight: 800; font-size: 0.95rem; margin-top: 10px; text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
-            display: inline-block; padding: 6px 15px; border-radius: 4px; border: 1px solid #004b87;
-            background: linear-gradient(180deg, #00a8ff 0%, #005499 100%);
+            color: white; font-weight: 800; font-size: 0.95rem; margin-top: 10px; text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+            display: inline-block; padding: 6px 15px; border-radius: 4px; border: 1px solid #003366;
+            background: linear-gradient(180deg, #1aa3ff 0%, #0066cc 100%);
             box-shadow: inset 0 1px 2px rgba(255,255,255,0.5);
         }
 
@@ -44,7 +39,7 @@
         
         .back-btn {
             position: relative; display: inline-block; padding: 12px 30px; font-weight: 800; font-size: 0.95rem;
-            text-transform: uppercase; text-decoration: none; border-radius: 30px;
+            text-transform: uppercase; text-decoration: none; border-radius: 30px; font-family: inherit;
             background: linear-gradient(180deg, #ffffff 0%, #dcdcdc 100%); color: #111;
             border: 1px solid #999; box-shadow: inset 0 1px 2px #fff, 0 6px 15px rgba(0, 0, 0, 0.2);
             text-shadow: 0 1px 0 #fff; transition: all 0.2s; overflow: hidden;
@@ -63,27 +58,23 @@
 
 <div class="glass-card">
     <div class="doc-header">
-        <h1>Privacy Policy</h1>
+        <h1>Data Privacy Policy</h1>
         <div class="effective-date">Effective Date: 18th December 2025</div>
     </div>
 
-    <p>DIAL ENGINE™ is an enterprise-grade sales automation center. We operate under strict data sovereignty principles, ensuring that proprietary lead databases and agent telemetry remain securely locked down within your authorized corporate ecosystem.</p>
+    <p>DIAL ENGINE™ prioritizes the data sovereignty of its clients. We understand that in enterprise sales, data is your most valuable asset. Our architecture is explicitly designed to keep your information entirely within your control.</p>
 
-    <h2>1. Data Sovereignty & Storage</h2>
-    <p>We do not pool your CRM data on shared, publicly accessible web servers. All client records and provisioned terminal data are housed in a dedicated PostgreSQL Lead Vault configured specifically for your firm. This ensures your data is strictly yours and shielded from external analytics scraping.</p>
+    <h2>1. Absolute Data Ownership</h2>
+    <p>We do not pool, store, or warehouse your CRM leads on external developer servers. All vaults, active terminals, and client records generated by the automation hub belong exclusively to the Licensee. You have total authority over your operational data.</p>
 
-    <h2>2. Terminal Isolation Protocol</h2>
-    <p>To protect the integrity of the master database, deployed agents operate on strict "Zero-Footprint" terminals. The automation logic runs locally. Agents never interact directly with the master database, completely eliminating the risk of mass data exports, unauthorized duplication, or internal theft.</p>
+    <h2>2. Isolated Automation Logistics</h2>
+    <p>Dial Engine functions as an operational bridge. When you execute commands to dispense leads or shuffle your vault, the logic processes those actions without requiring us to read, harvest, or monetize the contact information within the files.</p>
 
-    <h2>3. Telemetry & Administrative Oversight</h2>
-    <p>Our background infrastructure continuously monitors CRM interactions and transfer logs to ensure the smooth operation of large-scale agent floors. This telemetry is streamed asynchronously to a private logging interface <span class="highlight">strictly for administrative oversight and gamification</span>. We do not sell, share, or analyze this telemetry for third-party marketing.</p>
+    <h2>3. Telemetry & Gamification</h2>
+    <p>To provide accurate leaderboards and floor analytics, the central hub tracks non-identifying telemetry (such as total daily dials, connection ratios, and aggregate transfer counts). This data is utilized solely for your firm's internal auditing and gamification. We do not sell or share this operational telemetry.</p>
 
-    <h2>4. Total Data Eradication</h2>
-    <p>We enforce total corporate control. Upon the termination or offboarding of any agent, the DIAL ENGINE™ system executes an automated cloud command to permanently delete the agent's assigned terminal and revoke access instantly. The data is destroyed at the endpoint, ensuring zero retention post-employment.</p>
-
-    <h2>5. Technical & Compliance Inquiries</h2>
-    <p>For security audits, infrastructure compliance, or direct technical questions regarding our data routing and automation logic, please contact the lead systems developer directly:</p>
-    <p><span class="highlight">Email:</span> <a href="mailto:yahyaadillapro@gmail.com" style="color: #004b87; text-decoration: none; font-weight: 800;">yahyaadillapro@gmail.com</a></p>
+    <h2>4. Secure Offboarding Protocols</h2>
+    <p>The software provides tools designed to protect your data from internal leaks. When an agent is fired or offboarded via the central hub, the system cleanly revokes their access and secures the terminal, ensuring your leads remain strictly within your corporate environment.</p>
 
     <div class="btn-container">
         <a href="index.html" class="back-btn">← Return to Architecture</a>
