@@ -9,7 +9,6 @@
         body {
             margin: 0;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            /* Deep teal, cyan, and subtle green for that Vista Aurora look */
             background: #025968;
             background: linear-gradient(135deg, #013a52 0%, #037d8a 50%, #68a834 100%);
             background-attachment: fixed;
@@ -51,7 +50,7 @@
             font-size: 1.25rem; color: #f0f8ff; font-weight: 600; margin-bottom: 30px; 
             max-width: 550px; text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
-        .hero-actions { display: flex; gap: 15px; }
+        .hero-actions { display: flex; gap: 15px; align-items: center; }
         
         .hero-image-container { flex: 1; text-align: right; }
         .hero-image { width: 100%; max-width: 500px; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)); }
@@ -102,8 +101,8 @@
         .price-list li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.95rem; font-weight: 600; color: #222; }
         .price-list li::before { content: '✓'; color: #1aa86b; margin-right: 10px; font-weight: 900; font-size: 1.1rem; }
 
-        /* --- TRUE VISTA HARD-GLOSS EMERALD BUTTONS (Applied to all actions) --- */
-        .btn, .nav-cta {
+        /* --- TRUE VISTA HARD-GLOSS EMERALD BUTTON (Specific for nav-cta) --- */
+        .nav-cta {
             position: relative; display: inline-block; 
             font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
             border-radius: 30px; transition: all 0.2s; cursor: pointer; text-align: center; overflow: hidden;
@@ -112,35 +111,91 @@
             border: 1px solid rgba(0,0,0,0.8);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255,255,255,0.3);
             z-index: 1;
-
-            /* Base Emerald styling for all buttons per request */
+            padding: 8px 22px; font-size: 0.95rem; margin-left: 30px;
             background: linear-gradient(180deg, #1aa86b 0%, #0d6b41 49%, #054528 50%, #012111 100%);
             border-top: 1px solid #4df5a5;
         }
 
-        /* Hover effects for the emerald style */
-        .btn:hover, .nav-cta:hover { 
+        .nav-cta:hover { 
             filter: brightness(1.2); 
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(26, 168, 107, 0.5); 
             transform: translateY(-1px); 
         }
 
-        /* Specific sizing */
-        .btn { padding: 14px 35px; font-size: 1.05rem; }
-        .nav-cta { padding: 8px 22px; font-size: 0.95rem; margin-left: 30px; }
-
-        /* Top half horizon reflection (The true Vista secret) */
-        .btn::before, .nav-cta::before {
+        .nav-cta::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
             background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 100%);
             border-radius: 30px 30px 0 0; pointer-events: none; z-index: -1;
         }
 
-        /* Bottom inner glow */
-        .btn::after, .nav-cta::after {
+        .nav-cta::after {
             content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 40%;
             background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
             border-radius: 0 0 30px 30px; pointer-events: none; z-index: -1;
+        }
+
+        /* --- PURE IOS/ACRYLIC GLASS BUTTONS (For main page actions) --- */
+        .btn {
+            position: relative; display: inline-block; 
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
+            border-radius: 8px; /* Slightly rounded edge like physical acrylic */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; text-align: center; overflow: hidden;
+            font-family: inherit; color: #ffffff !important;
+            
+            /* The Pure Glass Base - High Saturation */
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(20px) saturate(150%); 
+            -webkit-backdrop-filter: blur(20px) saturate(150%);
+            
+            /* Sharp Glass Light Bleed Borders */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.9); /* Hard white highlight */
+            border-left: 1px solid rgba(255, 255, 255, 0.6);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Deep bottom shadow */
+            
+            /* External Drop Shadow + Internal Frost */
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+            
+            /* Heavy text shadow */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+            z-index: 1;
+            padding: 14px 35px; font-size: 1.05rem;
+        }
+        
+        /* Dedicated Email Button Fix */
+        .btn-email {
+            text-transform: lowercase;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            font-size: 1.05rem;
+            padding: 14px 30px;
+        }
+
+        /* Top half hard-glass reflection */
+        .btn::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%);
+            pointer-events: none; z-index: -1;
+        }
+
+        /* EMERALD TINT GLASS (Primary Licensing Button) */
+        .btn-primary {
+            background: rgba(26, 168, 107, 0.3); /* Stronger green tint so it doesn't look gray */
+        }
+        .btn-primary:hover { 
+            background: rgba(26, 168, 107, 0.5);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.8); 
+            transform: translateY(-2px); 
+        }
+
+        /* CLEAR / WHITE FROST GLASS (Email) */
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2); /* Bright frosted white */
+        }
+        .btn-secondary:hover { 
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.8); 
+            transform: translateY(-2px); 
         }
 
         /* --- FOOTER --- */
@@ -151,29 +206,31 @@
 
         /* --- FIXED MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
-            header { position: absolute; flex-direction: column; height: auto; padding: 20px; text-align: center; }
-            .nav-links { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-            .nav-links a { margin-left: 0; font-size: 0.95rem; }
-            .nav-cta { margin-left: 0; padding: 8px 20px; font-size: 0.95rem; }
+            header { position: absolute; flex-direction: column; height: auto; padding: 15px; text-align: center; }
+            .logo { font-size: 1.5rem; margin-bottom: 5px; }
+            .nav-links { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+            .nav-links a { margin-left: 0; font-size: 0.85rem; padding: 0 5px; }
+            .nav-cta { margin-left: 0; margin-top: 5px; width: auto; }
             
-            .hero { flex-direction: column; text-align: center; padding-top: 180px; padding-bottom: 40px; gap: 30px; }
-            .hero-title { font-size: 2.4rem; }
-            .hero-subtitle { font-size: 1.1rem; margin: 0 auto 30px auto; }
+            .hero { flex-direction: column; text-align: center; padding-top: 160px; padding-bottom: 20px; gap: 20px; }
+            .hero-title { font-size: 2.4rem; margin-bottom: 10px; }
+            .hero-subtitle { font-size: 1.05rem; margin: 0 auto 20px auto; padding: 0 10px; }
             
             .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 15px; }
-            .hero-actions .btn { width: 100%; box-sizing: border-box; padding: 15px 20px; }
+            .hero-actions .btn { width: 100%; box-sizing: border-box; padding: 14px 15px; font-size: 0.95rem; }
+            .hero-actions .btn-email { font-size: 0.9rem; }
             
-            .hero-image-container { text-align: center; margin-top: 10px; }
-            .hero-image { max-width: 85%; margin: 0 auto; }
+            .hero-image-container { text-align: center; margin-top: 15px; width: 100%; }
+            .hero-image { max-width: 100%; width: 320px; margin: 0 auto; } 
             
-            .container { padding: 0 15px 50px 15px; }
-            .glass-panel { padding: 35px 20px; margin-bottom: 40px; }
-            .panel-header { font-size: 1.7rem; margin-bottom: 25px; text-align: center; }
+            .container { padding: 0 15px 40px 15px; }
+            .glass-panel { padding: 35px 20px; margin-bottom: 30px; }
+            .panel-header { font-size: 1.8rem; margin-bottom: 20px; text-align: center; }
             
-            .grid-3 { grid-template-columns: 1fr; gap: 25px; }
+            .grid-3 { grid-template-columns: 1fr; gap: 20px; }
             .feature-block { padding: 25px 20px; }
             
-            .pricing-grid { grid-template-columns: 1fr; gap: 30px; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 25px; }
             .price-card { padding: 35px 20px; }
             .price-amount { font-size: 3rem; }
         }
@@ -197,8 +254,8 @@
             <h1 class="hero-title">The Engine Behind High-Ticket Floors.</h1>
             <p class="hero-subtitle">A deployable backend architecture built to mass-provision lightweight, zero-cost-per-seat CRMs. Automate your hiring and firing, track KPIs, and route real-time telemetry at scale.</p>
             <div class="hero-actions">
-                <a href="#pricing" class="btn btn-primary">View Licensing</a>
-                <a href="mailto:yahyaadillapro@gmail.com" class="btn btn-secondary">yahyaadillapro@gmail.com</a>
+                <a href="#pricing" class="btn btn-primary">VIEW LICENSING</a>
+                <a href="mailto:yahyaadillapro@gmail.com" class="btn btn-secondary btn-email">yahyaadillapro@gmail.com</a>
             </div>
         </div>
         <div class="hero-image-container">
