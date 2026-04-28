@@ -3,382 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIAL ENGINE™ | The Next-Gen Drive CRM</title>
+    <title>DIAL ENGINE™ | Enterprise Sales Infrastructure</title>
     <style>
-        /* --- UNIFIED FRUTIGER AERO AESTHETIC --- */
+        /* --- SHARP FRUTIGER AERO / MIRROR EDGE AESTHETIC --- */
         body {
             margin: 0;
-            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #e0f7fa url('https://www.transparenttextures.com/patterns/clouds.png');
-            background: radial-gradient(circle at 50% 0%, #ffffff 0%, #b3e5fc 30%, #4facfe 80%, #0078d7 100%);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #f4f7f9;
+            background: radial-gradient(circle at 50% -20%, #ffffff 0%, #e0eaf5 40%, #c4d7eb 100%);
             background-attachment: fixed;
-            color: #2c353f;
-            line-height: 1.7;
-            overflow-x: hidden; 
+            color: #111827;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: 1px; color: #004b87; }
+        .nav-links a {
+            text-decoration: none; color: #333; font-weight: 600; font-size: 0.95rem;
+            margin-left: 30px; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #0066cc; }
+        .nav-cta {
+            background: linear-gradient(180deg, #0078d7 0%, #005a9e 100%);
+            color: white !important; padding: 8px 20px; border-radius: 2px;
+            border: 1px solid #004b87; border-top: 1px solid #3399ff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            position: relative;
+            padding: 140px 50px 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
         }
-
-        .hero-banner {
-            width: 100%;
-            max-width: 1100px;
-            height: auto;
-            mix-blend-mode: darken; 
-            filter: drop-shadow(0px 20px 30px rgba(0, 90, 158, 0.25));
-            animation: float 8s ease-in-out infinite;
+        .hero-text { flex: 1; }
+        .hero-title {
+            font-size: 3.2rem; font-weight: 800; letter-spacing: -1px; margin: 0 0 15px 0;
+            color: #003366; text-shadow: 0 1px 1px rgba(255,255,255,0.8); line-height: 1.1;
         }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .hero-tagline {
-            font-size: 2.4rem;
-            color: #005a9e;
-            font-weight: 300;
-            margin-top: -10px;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 0px rgba(255,255,255,1);
-            letter-spacing: -0.5px;
-        }
+        .hero-subtitle { font-size: 1.2rem; color: #444; font-weight: 500; margin-bottom: 30px; max-width: 500px; }
+        .hero-actions { display: flex; gap: 15px; }
         
-        .hero-subtext {
-            font-size: 1.15rem;
-            color: #222;
-            font-weight: 500;
-            max-width: 750px;
-            margin: 0 auto 60px auto;
-            line-height: 1.8;
-            background: rgba(255,255,255,0.4);
-            padding: 20px 30px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.8);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        .hero-image-container { flex: 1; text-align: right; }
+        .hero-image {
+            width: 100%; max-width: 500px;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
         }
 
-        /* --- LONG-SCROLL AERO PANELS --- */
+        /* --- SHARP MIRROR GLASS PANELS --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 50px 80px 50px; }
+        
         .glass-panel {
-            max-width: 1150px;
-            margin: 0 auto 60px auto;
-            background: rgba(255, 255, 255, 0.55);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-radius: 40px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 2px; /* Sharp edges */
             border-top: 2px solid rgba(255, 255, 255, 1);
-            border-left: 1px solid rgba(255, 255, 255, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.9);
             border-right: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 60px;
-            box-shadow: 0 25px 60px rgba(0, 90, 158, 0.15), inset 0 0 20px rgba(255,255,255,0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 50px; margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 30, 60, 0.08), inset 0 1px 0 rgba(255,255,255,1);
             position: relative;
-            overflow: hidden;
-            box-sizing: border-box;
-            width: 92%;
         }
 
-        /* Deep Glossy Sweep */
-        .glass-panel::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 140px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
-            z-index: -1;
+        .panel-header {
+            font-size: 1.8rem; font-weight: 700; color: #004b87;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 15px; margin-top: 0; margin-bottom: 30px;
         }
 
-        .panel-title {
-            font-size: 2.4rem;
-            margin-top: 0;
-            margin-bottom: 40px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #00c6ff, #005a9e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.1));
-            border-bottom: 2px solid rgba(0, 120, 215, 0.2);
-            padding-bottom: 15px;
-        }
+        /* --- FEATURES GRID --- */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .feature-block h4 { font-size: 1.1rem; color: #111; margin: 0 0 10px 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .feature-block p { font-size: 0.95rem; color: #444; margin: 0; }
+        .feature-block { border-left: 3px solid #0066cc; padding-left: 15px; }
 
-        /* --- SPLIT LAYOUTS --- */
-        .split-layout { display: flex; gap: 50px; align-items: flex-start; }
-        .split-content { flex: 1; z-index: 1; }
-        
-        .split-sidebar {
-            flex: 0.6;
-            background: rgba(255,255,255,0.6);
-            padding: 35px;
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,1);
-            box-shadow: inset 0 0 20px rgba(255,255,255,1), 0 10px 25px rgba(0,90,158,0.1);
-            z-index: 1;
+        /* --- PRICING SECTION --- */
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .price-card {
+            background: rgba(255,255,255,0.9); padding: 40px; border-radius: 2px;
+            border: 1px solid rgba(0, 75, 135, 0.2); border-top: 3px solid #0066cc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center;
         }
+        .price-card h3 { font-size: 1.4rem; color: #333; margin: 0 0 10px 0; }
+        .price-amount { font-size: 3rem; font-weight: 800; color: #004b87; margin: 0 0 20px 0; line-height: 1; }
+        .price-desc { font-size: 0.95rem; color: #555; margin-bottom: 30px; font-weight: 500;}
+        .price-list { list-style: none; padding: 0; margin: 0 0 30px 0; text-align: left; }
+        .price-list li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; font-weight: 600; color: #222; }
+        .price-list li::before { content: '>>'; color: #0066cc; margin-right: 10px; font-weight: 800; }
 
-        .feature-item { margin-bottom: 35px; }
-        .feature-item h4 {
-            color: #005a9e;
-            font-size: 1.4rem;
-            margin: 0 0 8px 0;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        .feature-item p, .split-sidebar p {
-            font-size: 1.05rem; margin: 0; color: #222; font-weight: 500; line-height: 1.7;
-        }
-
-        /* --- MASKED CAPABILITIES LIST --- */
-        .command-list { list-style: none; padding: 0; margin: 0; }
-        .command-list li {
-            background: rgba(255, 255, 255, 0.65);
-            margin-bottom: 15px;
-            padding: 15px 20px;
-            border-radius: 15px;
-            border-left: 5px solid #00c6ff;
-            border-top: 1px solid white;
-            box-shadow: 0 5px 15px rgba(0,90,158,0.08);
-        }
-        .command-list strong {
-            display: block; color: #005a9e; font-size: 1.15rem; font-weight: 700; margin-bottom: 4px;
-        }
-        .command-list span { color: #222; font-weight: 500; display: block; font-size: 1rem; }
-
-        /* --- STANDARD GRID --- */
-        .feature-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; z-index: 1; position: relative;
-        }
-        .grid-card {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 30px;
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.9);
-            border-top: 2px solid rgba(255,255,255,1);
-            box-shadow: 0 10px 25px rgba(0, 90, 158, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .grid-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 15px 35px rgba(0, 120, 215, 0.2);
-        }
-        .grid-card h4 {
-            color: #0066cc; font-size: 1.25rem; margin-top: 0; margin-bottom: 10px; font-weight: 700;
-        }
-        .grid-card p { color: #222; font-size: 1rem; margin: 0; font-weight: 500; line-height: 1.6; }
-
-        /* --- GLOSSY BUTTONS --- */
-        .action-center {
-            text-align: center; margin: 60px 0 40px 0; display: flex; flex-direction: column; align-items: center; gap: 20px;
-        }
-        
+        /* --- BUTTONS --- */
         .btn {
-            position: relative;
-            width: 100%;
-            max-width: 450px;
-            padding: 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: white;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid rgba(255,255,255,0.8);
-            box-shadow: 0 10px 25px rgba(0, 120, 215, 0.3), inset 0 -3px 10px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            text-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+            display: inline-block; padding: 12px 30px; font-weight: 700; font-size: 1rem;
+            text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
+            border-radius: 2px; transition: all 0.2s; cursor: pointer; text-align: center;
+        }
+        .btn-primary {
+            background: linear-gradient(180deg, #0078d7 0%, #005a9e 100%);
+            color: white; border: 1px solid #004b87; border-top: 1px solid #4da6ff;
+            box-shadow: 0 4px 10px rgba(0, 90, 158, 0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+        }
+        .btn-primary:hover { filter: brightness(1.1); box-shadow: 0 6px 15px rgba(0, 90, 158, 0.4); }
+        .btn-secondary {
+            background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+            color: #333; border: 1px solid #aaa; border-top: 1px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .license-btn { background: linear-gradient(180deg, #ff9a44 0%, #fc6076 100%); }
-        .privacy-btn { background: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%); }
-        .contact-btn { background: linear-gradient(180deg, #66fb71 0%, #21ad2b 100%); }
-
-        /* Button Glass Highlight */
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 2px; left: 2px; right: 2px; height: 45%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
-            border-radius: 50px 50px 100px 100px;
-            pointer-events: none;
+        /* --- FOOTER --- */
+        footer {
+            text-align: center; padding: 40px; font-size: 0.85rem; color: #666; font-weight: 600;
+            border-top: 1px solid rgba(0,0,0,0.1); margin-top: 40px;
         }
 
-        .btn:hover {
-            transform: scale(1.03);
-            filter: brightness(1.1);
-            box-shadow: 0 15px 30px rgba(0, 120, 215, 0.4), inset 0 -3px 10px rgba(0,0,0,0.1);
-        }
-
-        .email-backup {
-            font-size: 0.95rem; color: #005a9e; font-weight: 600;
-            background: rgba(255,255,255,0.7); padding: 10px 30px;
-            border-radius: 30px; border: 1px solid rgba(255,255,255,1);
-            margin-top: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        /* --- COPYRIGHT FOOTER --- */
-        .copyright-footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.95rem;
-            color: #1a2a3a;
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.3);
-            border-top: 1px solid rgba(255,255,255,0.6);
-            backdrop-filter: blur(10px);
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 850px) {
-            .split-layout { flex-direction: column; gap: 30px; }
-            .split-sidebar { width: 100%; padding: 25px; box-sizing: border-box; }
-            .hero { padding: 40px 15px 20px 15px; }
-            .hero-tagline { font-size: 1.8rem; }
-            .hero-subtext { font-size: 1rem; margin-bottom: 40px; }
-            .glass-panel { padding: 35px 20px; border-radius: 30px; margin-bottom: 40px; width: 94%; }
-            .panel-title { font-size: 2rem; margin-bottom: 25px; }
-            .feature-item h4, .grid-card h4 { font-size: 1.25rem; }
-            .feature-item p, .grid-card p, .split-sidebar p { font-size: 1rem; }
-            .btn { max-width: 90%; font-size: 1rem; padding: 18px; }
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
+            .hero-image-container { text-align: center; }
+            .hero-actions { justify-content: center; }
+            .grid-3, .pricing-grid { grid-template-columns: 1fr; }
+            header { padding: 0 20px; }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="logo">DIAL ENGINE™</div>
+        <div class="nav-links">
+            <a href="#features">Architecture</a>
+            <a href="#pricing">Pricing</a>
+            <a href="license.html">License Terms</a>
+            <a href="mailto:yahyaadillapro@gmail.com" class="nav-cta">Contact Developer</a>
+        </div>
+    </header>
+
     <div class="hero">
-        <img src="banner.jpg" alt="Dial Engine Architecture" class="hero-banner">
-        <div class="hero-tagline">Native Google Architecture. Enterprise Performance.</div>
-        <div class="hero-subtext">Dial Engine is a fully autonomous, custom-engineered sales infrastructure. Built from the ground up to deploy zero-latency agent terminals, manage concurrent lead locking, and route real-time telemetry across a 50-seat floor.</div>
+        <div class="hero-text">
+            <h1 class="hero-title">Standalone SaaS For High-Ticket Floors.</h1>
+            <p class="hero-subtitle">A fully autonomous, custom-engineered telecommunications and sales infrastructure. Deploys zero-latency agent terminals, manages concurrent lead locking, and routes real-time telemetry natively.</p>
+            <div class="hero-actions">
+                <a href="#pricing" class="btn btn-primary">View Licensing</a>
+                <a href="mailto:yahyaadillapro@gmail.com" class="btn btn-secondary">yahyaadillapro@gmail.com</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="softwarebox.jpg" alt="Dial Engine Software" class="hero-image">
+        </div>
     </div>
 
-    <div class="glass-panel">
-        <h2 class="panel-title">The Manager Hub & KPI Radar</h2>
-        <div class="split-layout">
-            <div class="split-content">
-                <div class="feature-item">
-                    <h4>📡 60-Second Background Radar</h4>
-                    <p>Total operational oversight. An asynchronous task continually scans every agent's terminal. When a lead is marked as transferred, the system instantly pings your management channel with full property and contact details.</p>
+    <div class="container" id="features">
+        <div class="glass-panel">
+            <h2 class="panel-header">Proprietary Infrastructure & Routing</h2>
+            <div class="grid-3">
+                <div class="feature-block">
+                    <h4>Custom Telecom Network</h4>
+                    <p>Operate independently. Dial Engine provisions its own secure Linux routing server to manage outbound telecommunications, bypassing standard per-seat CRM vendor fees.</p>
                 </div>
-                <div class="feature-item">
-                    <h4>📊 Automated Master Database</h4>
-                    <p>Forget manual spreadsheets. The Master Hub acts as the single source of truth, automatically logging agent identities, generated UUIDs, active status, and secure CRM links the moment they are onboarded.</p>
+                <div class="feature-block">
+                    <h4>Automated SIP Provisioning</h4>
+                    <p>Seamless floor scaling. The backend instantly pulls, assigns, and configures secure UDP credentials to unique agent UUIDs upon deployment, scrubbing them clean upon offboarding.</p>
                 </div>
-                <div class="feature-item">
-                    <h4>🏆 Daily Leaderboard Generation</h4>
-                    <p>Built-in gamification. The system continuously tallies dials and booked transfers, generating a clean KPI snapshot that can be broadcasted directly to your team with a single action.</p>
+                <div class="feature-block">
+                    <h4>60-Second KPI Radar</h4>
+                    <p>Total asynchronous oversight. Background operations continually scan terminal telemetry, instantly routing booked transfer data and master database updates directly to management.</p>
                 </div>
             </div>
-            <div class="split-sidebar">
-                <h4 style="color:#005a9e; margin-top:0;">SIP Inventory Automation</h4>
-                <p>Scaling a floor requires phone numbers. Dial Engine maintains a live, automated SIP Inventory framework.</p>
-                <br>
-                <p>When an agent is deployed, the system seamlessly pulls an available credential, assigns it to their unique UUID, and delivers the exact UDP configuration. When offboarded, the SIP is instantly scrubbed and returned to the available pool.</p>
+        </div>
+
+        <div class="glass-panel">
+            <h2 class="panel-header">PostgreSQL Lead Vault</h2>
+            <div class="grid-3">
+                <div class="feature-block">
+                    <h4>Concurrent Lock Technology</h4>
+                    <p>Eliminate double-calling. Advanced database locks ensure that when multiple terminals request data simultaneously, strictly unique and verified batches are dispensed globally.</p>
+                </div>
+                <div class="feature-block">
+                    <h4>Dynamic Floor Shuffle</h4>
+                    <p>Instant list regeneration. Administrators can sweep un-transferred leads from all active terminals, shuffle the vault, and redeploy randomized batches to maintain floor momentum.</p>
+                </div>
+                <div class="feature-block">
+                    <h4>Total Data Eradication</h4>
+                    <p>Strict proprietary control. Upon contract termination, Dial Engine commands cloud APIs to permanently wipe terminal environments, ensuring zero data leakage post-employment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-panel" id="pricing">
+            <h2 class="panel-header" style="text-align: center; border-bottom: none; margin-bottom: 10px;">Corporate Software Licensing</h2>
+            <p style="text-align: center; color: #555; margin-bottom: 40px; font-weight: 500;">Dial Engine is a standalone business solution. Licenses are bound strictly to the purchasing entity.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Standard License & Deployment</h3>
+                    <div class="price-amount">$5,000</div>
+                    <div class="price-desc">One-time upfront fee for server configuration and backend deployment.</div>
+                    <ul class="price-list">
+                        <li>Custom Telecommunications Setup</li>
+                        <li>PostgreSQL Database Initialization</li>
+                        <li>Google Cloud API Provisioning</li>
+                        <li>Admin Command Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="price-card" style="border-top-color: #009933;">
+                    <h3>Maintenance & Tech Support</h3>
+                    <div class="price-amount">$1,500<span style="font-size: 1.2rem; color: #666;">/mo</span></div>
+                    <div class="price-desc">Required monthly retainer for live operations, server uptime, and support.</div>
+                    <ul class="price-list">
+                        <li>24/7 Linux Server Maintenance</li>
+                        <li>Database Optimization & Backups</li>
+                        <li>Live Telemetry Auditing</li>
+                        <li>Direct Developer Bug Fixes</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="glass-panel">
-        <h2 class="panel-title">Instant-Deploy Agent Terminals</h2>
-        <div class="feature-grid">
-            <div class="grid-card">
-                <h4>⚡ Auto-Cloning Architecture</h4>
-                <p>No more manual sharing. The system utilizes Google Drive APIs to perfectly clone the master CRM template, organize it into a secure directory, and grant isolated Writer access to the agent.</p>
-            </div>
-            <div class="grid-card">
-                <h4>🏡 Zillow Data Injection</h4>
-                <p>Agents dial with leverage. The terminal provides a live matrix including property addresses, cities, and states. Agents can pull estimated values and street views directly inside their Spreadsheet before the call connects.</p>
-            </div>
-            <div class="grid-card">
-                <h4>🔐 Zero Extensions Required</h4>
-                <p>Operate under a strict "Zero-Footprint" philosophy. Because the entire system relies on secure cloud bridging, your agents require absolutely zero browser extensions, eliminating the risk of credential scraping or browser lag.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="glass-panel">
-        <h2 class="panel-title">PostgreSQL Lead Vault</h2>
-        <div class="split-layout">
-            <div class="split-content">
-                <div class="feature-item">
-                    <h4>🚦 Concurrent Locking Tech</h4>
-                    <p>Prevent the nightmare of double-calling. The vault utilizes advanced PostgreSQL locking mechanisms. When multiple agents request data simultaneously, the database instantly reserves strictly unique batches for every single request.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>🔀 The "Mix & Match" Protocol</h4>
-                    <p>Beat list fatigue instantly. Administrators can sweep all un-transferred leads from every agent's CRM, shuffle the entire database pool, and redeploy completely randomized batches to keep floor momentum high.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>🥞 Global Stacking Engine</h4>
-                    <p>Global deployment made easy. Need to feed the floor? The system locates all active agents and appends a fresh stack of leads to the absolute bottom of their current list, without interrupting their workflow or deleting existing notes.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="glass-panel">
-        <h2 class="panel-title">Centralized Command Operations</h2>
-        <p style="font-size: 1.1rem; color: #222; font-weight: 500; margin-bottom: 30px;">Manage a 50-seat floor globally using intuitive integrations. Everything is routed, authenticated, and executed in seconds.</p>
-        
-        <div class="split-layout">
-            <div class="split-content">
-                <ul class="command-list">
-                    <li><strong>Automated Provisioning</strong><span>Clones the CRM, assigns SIP credentials, applies roles, and delivers secure station setup instructions.</span></li>
-                    <li><strong>Instant Offboarding</strong><span>Revokes system access, securely deletes Google Drive files, and recycles leads back to the vault.</span></li>
-                    <li><strong>Targeted Dispersion</strong><span>Pulls fresh, verified leads directly from the PostgreSQL vault to a specific agent's terminal.</span></li>
-                    <li><strong>Global Lead Injection</strong><span>Executes a mass deployment of fresh leads to all active agent CRMs simultaneously.</span></li>
-                    <li><strong>Dynamic Floor Shuffle</strong><span>Recycles the entire floor's active inventory and redistributes completely randomized batches.</span></li>
-                </ul>
-            </div>
-            <div class="split-content">
-                <ul class="command-list">
-                    <li><strong>Live Leaderboard Broadcasting</strong><span>Instantly pushes the daily rankings and performance metrics to the team channel.</span></li>
-                    <li><strong>Private Telemetry Snapshots</strong><span>Silently delivers management a private, confidential breakdown of top active dialers.</span></li>
-                    <li><strong>SIP & KPI Auditing</strong><span>Allows administrators to view a specific agent's real-time stats and active SIP assignments.</span></li>
-                    <li><strong>Transfer Ledger Verification</strong><span>Audits the latest successful transfers directly from the immutable database ledger.</span></li>
-                    <li><strong>Global Vault Diagnostics</strong><span>Instantly queries the database to return an exact count of fresh, untouched leads available.</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="glass-panel">
-        <h2 class="panel-title">Security & Telemetry</h2>
-        <div class="feature-grid">
-            <div class="grid-card">
-                <h4>🛡️ AES Cryptography</h4>
-                <p>The Dial Engine does not just log data—it locks it down. All internal terminal operations are encrypted using standard cryptography protocols and stored locally in a secure vault file, unreadable by unauthorized parties.</p>
-            </div>
-            <div class="grid-card">
-                <h4>🗑️ Total Data Eradication</h4>
-                <p>When an agent's contract is terminated, the system doesn't just revoke access. It commands the Google Drive API to permanently delete their CRM file from existence, ensuring your proprietary data cannot be exported post-termination.</p>
-            </div>
-            <div class="grid-card">
-                <h4>📡 Live Streamed Logs</h4>
-                <p>Complete transparency for administrators. System actions, radar syncs, and backend executions are stripped of sensitive data and streamed asynchronously to a private logging interface in real-time.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="action-center">
-        <a href="license.html" class="btn license-btn">Standard Software License</a>
-        <a href="privacy.html" class="btn privacy-btn">View Privacy Policy</a>
-        <a href="mailto:yahyaadillapro@gmail.com" class="btn contact-btn">Contact Developer</a>
-        <div class="email-backup">Manual Copy: yahyaadillapro@gmail.com</div>
-    </div>
-
-    <div class="copyright-footer">
+    <footer>
         &copy; 2026 Mohamed Yahya Adilla. All Rights Reserved. Dial Engine™ is a proprietary trademark.<br>
         Unauthorized reproduction, distribution, or reverse-engineering is strictly prohibited under international copyright law.
-    </div>
+    </footer>
 
 </body>
 </html>
