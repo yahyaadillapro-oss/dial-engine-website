@@ -155,17 +155,36 @@
 
         /* --- FIXED MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
-            header { flex-direction: column; height: auto; padding: 15px 20px; justify-content: center; }
-            .nav-links { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .nav-links a { margin-left: 0; font-size: 0.9rem; }
-            .nav-cta { margin-left: 0; padding: 6px 18px; font-size: 0.9rem; }
-            .hero { flex-direction: column; text-align: center; padding-top: 140px; padding-bottom: 40px; }
-            .hero-image-container { text-align: center; margin-top: 20px; }
-            .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
-            .container { padding: 0 20px 40px 20px; }
-            .glass-panel { padding: 30px 20px; }
-            .grid-3, .pricing-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 2.5rem; }
+            /* Un-fix the header so it scrolls away naturally and doesn't eat screen space */
+            header { position: absolute; flex-direction: column; height: auto; padding: 20px; text-align: center; }
+            .nav-links { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+            .nav-links a { margin-left: 0; font-size: 0.95rem; }
+            .nav-cta { margin-left: 0; padding: 8px 20px; font-size: 0.95rem; }
+            
+            /* Give the hero more top padding to clear the header, space out the text */
+            .hero { flex-direction: column; text-align: center; padding-top: 180px; padding-bottom: 40px; gap: 30px; }
+            .hero-title { font-size: 2.4rem; }
+            .hero-subtitle { font-size: 1.1rem; margin: 0 auto 30px auto; }
+            
+            /* Make buttons full width and stacked cleanly */
+            .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 15px; }
+            .hero-actions .btn { width: 100%; box-sizing: border-box; padding: 15px 20px; }
+            
+            .hero-image-container { text-align: center; margin-top: 10px; }
+            .hero-image { max-width: 85%; margin: 0 auto; }
+            
+            /* Give panels room to breathe */
+            .container { padding: 0 15px 50px 15px; }
+            .glass-panel { padding: 35px 20px; margin-bottom: 40px; }
+            .panel-header { font-size: 1.7rem; margin-bottom: 25px; text-align: center; }
+            
+            /* Space out grid items */
+            .grid-3 { grid-template-columns: 1fr; gap: 25px; }
+            .feature-block { padding: 25px 20px; }
+            
+            .pricing-grid { grid-template-columns: 1fr; gap: 30px; }
+            .price-card { padding: 35px 20px; }
+            .price-amount { font-size: 3rem; }
         }
     </style>
 </head>
