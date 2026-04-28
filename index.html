@@ -5,94 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIAL ENGINE™ | Sales Automation Center</title>
     <style>
-        /* --- TRUE FRUTIGER AERO / VISTA GLOSS AESTHETIC --- */
+        /* --- VISTA AURORA AESTHETIC --- */
         body {
             margin: 0;
-            font-family: "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
-            background: #0078d7;
-            background: radial-gradient(circle at 50% 0%, #b3ebff 0%, #5cb8ff 30%, #0078d7 80%, #004b87 100%);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            /* Deep teal, cyan, and subtle green for that Vista Aurora look */
+            background: #025968;
+            background: linear-gradient(135deg, #013a52 0%, #037d8a 50%, #68a834 100%);
             background-attachment: fixed;
             color: #111827;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient light beams for background */
-        body::before {
-            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.3; z-index: -1; pointer-events: none;
-        }
-
         /* --- GLOSSY HEADER NAVIGATION --- */
         header {
-            position: fixed; top: 0; left: 0; right: 0; height: 70px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.4) 100%);
+            position: fixed; top: 0; left: 0; right: 0; height: 75px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 100%);
             backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255,255,255,1);
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 50px; z-index: 1000;
         }
-        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; color: #004b87; text-shadow: 0 1px 1px #fff; }
+        .logo { font-size: 1.6rem; font-weight: 800; letter-spacing: 1px; color: #003366; text-shadow: 0 1px 1px #fff; }
+        .nav-links { display: flex; align-items: center; }
         .nav-links a {
             text-decoration: none; color: #111; font-weight: 600; font-size: 0.95rem;
             margin-left: 30px; text-shadow: 0 1px 0 rgba(255,255,255,0.5); transition: color 0.2s;
+            font-family: inherit;
         }
-        .nav-links a:hover { color: #0066cc; }
+        .nav-links a:hover { color: #005a9e; }
         
-        /* Vista-style Pill Button */
+        /* Vista Pill Button for Nav */
         .nav-cta {
             position: relative; display: inline-block; padding: 8px 22px; margin-left: 30px;
-            background: linear-gradient(180deg, #00a8ff 0%, #005499 100%);
+            background: linear-gradient(180deg, #1aa3ff 0%, #0066cc 100%);
             color: white !important; font-weight: 700; border-radius: 30px; text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
             border: 1px solid #003366; box-shadow: inset 0 1px 2px rgba(255,255,255,0.6), 0 4px 6px rgba(0,0,0,0.2);
-            overflow: hidden;
+            font-family: inherit;
         }
         .nav-cta::before {
             content: ''; position: absolute; top: 1px; left: 1px; right: 1px; height: 45%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%);
             border-radius: 30px 30px 100px 100px; pointer-events: none;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 140px 50px 80px 50px; max-width: 1200px; margin: 0 auto;
+            padding: 160px 50px 80px 50px; max-width: 1200px; margin: 0 auto;
             display: flex; align-items: center; gap: 50px;
         }
         .hero-text { flex: 1; }
         .hero-title {
-            font-size: 3.4rem; font-weight: 800; letter-spacing: -1px; margin: 0 0 15px 0;
-            color: #ffffff; text-shadow: 0 2px 5px rgba(0,0,0,0.3); line-height: 1.1;
+            font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; margin: 0 0 15px 0;
+            color: #ffffff; text-shadow: 0 2px 5px rgba(0,0,0,0.4); line-height: 1.1;
         }
         .hero-subtitle { 
-            font-size: 1.25rem; color: #e0f2ff; font-weight: 600; margin-bottom: 30px; 
-            max-width: 550px; text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            font-size: 1.25rem; color: #f0f8ff; font-weight: 600; margin-bottom: 30px; 
+            max-width: 550px; text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
         .hero-actions { display: flex; gap: 15px; }
         
         .hero-image-container { flex: 1; text-align: right; }
-        .hero-image { width: 100%; max-width: 500px; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4)); }
+        .hero-image { width: 100%; max-width: 500px; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)); }
 
         /* --- MIRROR EDGE GLASS PANELS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 50px 80px 50px; }
         
         .glass-panel {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%);
-            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            border-radius: 8px; /* Slight rounding for mirror edge */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.45) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 6px;
             border-top: 2px solid rgba(255, 255, 255, 1);
-            border-left: 1px solid rgba(255, 255, 255, 0.8);
+            border-left: 1px solid rgba(255, 255, 255, 0.9);
             border-right: 1px solid rgba(255, 255, 255, 0.4);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             padding: 50px; margin-bottom: 40px;
-            box-shadow: 0 25px 50px rgba(0, 30, 60, 0.3), inset 0 20px 20px -20px rgba(255,255,255,0.8); /* Glossy top inner reflection */
-            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 30, 60, 0.4), inset 0 20px 20px -20px rgba(255,255,255,0.9);
         }
 
         .panel-header {
             font-size: 2rem; font-weight: 800; color: #004b87; text-shadow: 0 1px 1px #fff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.6); padding-bottom: 15px; margin-top: 0; margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.8); padding-bottom: 15px; margin-top: 0; margin-bottom: 30px;
             box-shadow: 0 1px 0 rgba(0,0,0,0.05);
         }
 
@@ -101,17 +96,17 @@
         .feature-block h4 { font-size: 1.15rem; color: #003366; margin: 0 0 10px 0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
         .feature-block p { font-size: 1rem; color: #222; margin: 0; font-weight: 500; }
         .feature-block { 
-            background: rgba(255,255,255,0.5); padding: 25px; border-radius: 6px;
+            background: rgba(255,255,255,0.6); padding: 25px; border-radius: 4px;
             border-top: 1px solid #fff; border-left: 1px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
         /* --- PRICING SECTION --- */
         .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .price-card {
-            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,245,250,0.9) 100%);
-            padding: 40px; border-radius: 8px; border: 1px solid rgba(0, 75, 135, 0.3); 
-            border-top: 3px solid #00a8ff; box-shadow: 0 15px 30px rgba(0,0,0,0.1), inset 0 1px 0 #fff;
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(240,245,250,0.9) 100%);
+            padding: 40px; border-radius: 6px; border: 1px solid rgba(0, 75, 135, 0.3); 
+            border-top: 3px solid #1aa3ff; box-shadow: 0 15px 30px rgba(0,0,0,0.15), inset 0 1px 0 #fff;
             text-align: center;
         }
         .price-card h3 { font-size: 1.4rem; color: #004b87; margin: 0 0 10px 0; text-shadow: 0 1px 0 #fff; }
@@ -119,29 +114,30 @@
         .price-desc { font-size: 1rem; color: #444; margin-bottom: 30px; font-weight: 600;}
         .price-list { list-style: none; padding: 0; margin: 0 0 30px 0; text-align: left; }
         .price-list li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.95rem; font-weight: 600; color: #222; }
-        .price-list li::before { content: '✓'; color: #00a8ff; margin-right: 10px; font-weight: 900; font-size: 1.1rem; }
+        .price-list li::before { content: '✓'; color: #1aa3ff; margin-right: 10px; font-weight: 900; font-size: 1.1rem; }
 
         /* --- BUTTONS --- */
         .btn {
             position: relative; display: inline-block; padding: 14px 35px; font-weight: 800; font-size: 1.05rem;
             text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
             border-radius: 30px; transition: all 0.2s; cursor: pointer; text-align: center; overflow: hidden;
+            font-family: inherit;
         }
         .btn-primary {
-            background: linear-gradient(180deg, #00a8ff 0%, #005499 100%); color: white;
+            background: linear-gradient(180deg, #1aa3ff 0%, #005499 100%); color: white;
             border: 1px solid #003366; text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.6), 0 6px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.6), 0 6px 15px rgba(0, 0, 0, 0.4);
         }
         .btn-primary::before {
             content: ''; position: absolute; top: 1px; left: 1px; right: 1px; height: 45%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
             border-radius: 30px 30px 100px 100px; pointer-events: none;
         }
-        .btn-primary:hover { filter: brightness(1.15); transform: translateY(-1px); box-shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 8px 20px rgba(0, 0, 0, 0.4); }
+        .btn-primary:hover { filter: brightness(1.15); box-shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 8px 20px rgba(0, 0, 0, 0.5); }
         
         .btn-secondary {
             background: linear-gradient(180deg, #ffffff 0%, #dcdcdc 100%); color: #111;
-            border: 1px solid #999; box-shadow: inset 0 1px 2px #fff, 0 6px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid #999; box-shadow: inset 0 1px 2px #fff, 0 6px 15px rgba(0, 0, 0, 0.3);
             text-shadow: 0 1px 0 #fff;
         }
         .btn-secondary::before {
@@ -149,19 +145,27 @@
             background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
             border-radius: 30px 30px 100px 100px; pointer-events: none;
         }
+        .btn-secondary:hover { filter: brightness(1.05); }
 
         /* --- FOOTER --- */
         footer {
-            text-align: center; padding: 40px; font-size: 0.9rem; color: #e0f2ff; font-weight: 600;
-            border-top: 1px solid rgba(255,255,255,0.2); margin-top: 40px; text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-align: center; padding: 40px; font-size: 0.9rem; color: #f0f8ff; font-weight: 600;
+            border-top: 1px solid rgba(255,255,255,0.2); margin-top: 40px; text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
+        /* --- FIXED MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
-            .hero-image-container { text-align: center; }
-            .hero-actions { justify-content: center; }
+            header { flex-direction: column; height: auto; padding: 15px 20px; justify-content: center; }
+            .nav-links { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .nav-links a { margin-left: 0; font-size: 0.9rem; }
+            .nav-cta { margin-left: 0; padding: 6px 18px; font-size: 0.9rem; }
+            .hero { flex-direction: column; text-align: center; padding-top: 140px; padding-bottom: 40px; }
+            .hero-image-container { text-align: center; margin-top: 20px; }
+            .hero-actions { justify-content: center; flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+            .container { padding: 0 20px 40px 20px; }
+            .glass-panel { padding: 30px 20px; }
             .grid-3, .pricing-grid { grid-template-columns: 1fr; }
-            header { padding: 0 20px; }
+            .hero-title { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -180,8 +184,8 @@
 
     <div class="hero">
         <div class="hero-text">
-            <h1 class="hero-title">Deployable Automation For Sales Firms.</h1>
-            <p class="hero-subtitle">The ultimate CRM mass-provisioning center. Built to clone terminals, manage concurrent database locking, and support infinitely scalable agent floors operating in bulk.</p>
+            <h1 class="hero-title">Centralized Command For Sales Firms.</h1>
+            <p class="hero-subtitle">A deployable automation center built to provision infinite zero-cost CRMs, route active leads, and manage real-time telemetry across a scalable agent floor.</p>
             <div class="hero-actions">
                 <a href="#pricing" class="btn btn-primary">View Licensing</a>
                 <a href="mailto:yahyaadillapro@gmail.com" class="btn btn-secondary">yahyaadillapro@gmail.com</a>
@@ -194,67 +198,85 @@
 
     <div class="container" id="features">
         <div class="glass-panel">
-            <h2 class="panel-header">Infinite Terminal Provisioning</h2>
+            <h2 class="panel-header">Agent & Station Management</h2>
             <div class="grid-3">
                 <div class="feature-block">
-                    <h4>Auto-Cloning Architecture</h4>
-                    <p>Scale without friction. The Engine utilizes cloud APIs to instantly clone your master CRM template, generating isolated, zero-footprint terminals for new agents in seconds.</p>
+                    <h4>Instant CRM Provisioning</h4>
+                    <p>Deploy terminals globally. Automatically clone master CRM templates, bypass pooling limits, and assign active SIP credentials to new hires in seconds.</p>
                 </div>
                 <div class="feature-block">
-                    <h4>Master Hub Operations</h4>
-                    <p>Forget manual spreadsheets. The central hub automatically logs agent identities, active workspace links, and securely authenticates UUIDs the moment an agent is deployed.</p>
+                    <h4>Automated Offboarding</h4>
+                    <p>Maintain complete control. Revoke workspace access, wipe the assigned CRM, and instantly vault the station back into the available pool with a single command.</p>
                 </div>
                 <div class="feature-block">
-                    <h4>Global Lead Injection</h4>
-                    <p>Mass deployment made easy. Feed your entire floor simultaneously by pushing fresh batches of leads directly to active terminals without interrupting their current workflow.</p>
+                    <h4>Secure Credential Routing</h4>
+                    <p>Keep operations moving. The Engine allows management to silently audit active stations or securely resend SIP/CRM login details directly to agents via automated direct messages.</p>
                 </div>
             </div>
         </div>
 
         <div class="glass-panel">
-            <h2 class="panel-header">PostgreSQL Vault & Telemetry</h2>
+            <h2 class="panel-header">Lead Routing & Vault Control</h2>
             <div class="grid-3">
                 <div class="feature-block">
-                    <h4>Concurrent Lock Technology</h4>
-                    <p>Eliminate double-calling. Advanced database locks ensure that when multiple terminals request data simultaneously, strictly unique and verified batches are dispensed.</p>
+                    <h4>Dynamic Vault Injection</h4>
+                    <p>Route leads with precision. Inject specific amounts directly into a single agent's CRM, or execute a mass-injection to feed all active terminals simultaneously.</p>
                 </div>
                 <div class="feature-block">
-                    <h4>60-Second KPI Radar</h4>
-                    <p>Total asynchronous oversight. Background operations continually scan terminal telemetry, instantly routing booked transfer data and master database updates to management.</p>
+                    <h4>Mix & Match Shuffling</h4>
+                    <p>Prevent list fatigue. Instantly wipe current active CRMs, shuffle the master vault, and deal completely randomized batches to your dialers to keep momentum high.</p>
                 </div>
                 <div class="feature-block">
-                    <h4>Total Data Eradication</h4>
-                    <p>Strict proprietary control. Upon contract termination, Dial Engine commands cloud APIs to permanently wipe terminal environments, ensuring zero data leakage post-employment.</p>
+                    <h4>Inventory Recycling</h4>
+                    <p>Never lose a lead. Run recycling commands to reclaim partial or complete lead batches from inactive agents and return them cleanly to the master vault.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-panel">
+            <h2 class="panel-header">Telemetry & Operations</h2>
+            <div class="grid-3">
+                <div class="feature-block">
+                    <h4>Live Global Auditing</h4>
+                    <p>Total operational visibility. Pull exact counts of fresh vault inventory, check the status of all BulkVS/telephony numbers, and audit successful transfers straight from the immutable ledger.</p>
+                </div>
+                <div class="feature-block">
+                    <h4>Automated Leaderboards</h4>
+                    <p>Built-in floor gamification. Continuously track true daily dials and wins, privately DM statistics to management, or broadcast historic and daily leaderboards directly to the team.</p>
+                </div>
+                <div class="feature-block">
+                    <h4>Mass Floor Communications</h4>
+                    <p>Command the room. Utilize central hub tools to bypass group chats and privately message all active dialers simultaneously with critical updates or alerts.</p>
                 </div>
             </div>
         </div>
 
         <div class="glass-panel" id="pricing">
             <h2 class="panel-header" style="text-align: center; border-bottom: none; margin-bottom: 10px;">Corporate Software Licensing</h2>
-            <p style="text-align: center; color: #222; margin-bottom: 40px; font-weight: 600;">Dial Engine is a standalone SaaS automation solution. Licenses are bound strictly to the purchasing entity.</p>
+            <p style="text-align: center; color: #222; margin-bottom: 40px; font-weight: 600;">Dial Engine is available via standard B2B enterprise licensing. The software is yours to operate.</p>
             
             <div class="pricing-grid">
                 <div class="price-card">
-                    <h3>Standard License & Deployment</h3>
+                    <h3>Enterprise Deployment</h3>
                     <div class="price-amount">$5,000</div>
-                    <div class="price-desc">One-time upfront fee for system architecture and CRM automation deployment.</div>
+                    <div class="price-desc">One-time standard licensing fee for architecture delivery and CRM automation setup.</div>
                     <ul class="price-list">
-                        <li>Master Database Initialization</li>
-                        <li>Automated Terminal Provisioning Logic</li>
-                        <li>Google Cloud API Configurations</li>
-                        <li>Admin Command Integration</li>
+                        <li>Master Database & Hub Initialization</li>
+                        <li>Automated Provisioning Logic</li>
+                        <li>Custom Central Command Setup</li>
+                        <li>Initial API Configurations</li>
                     </ul>
                 </div>
                 
                 <div class="price-card">
-                    <h3>Maintenance & Tech Support</h3>
+                    <h3>Operational Support</h3>
                     <div class="price-amount">$1,500<span style="font-size: 1.2rem; color: #666;">/mo</span></div>
-                    <div class="price-desc">Required monthly retainer for live operational logic, uptime, and database support.</div>
+                    <div class="price-desc">Standard service retainer for ongoing backend updates and active technical support.</div>
                     <ul class="price-list">
-                        <li>24/7 Automation Maintenance</li>
-                        <li>PostgreSQL Database Optimization</li>
-                        <li>Live Telemetry Auditing</li>
-                        <li>Direct Developer Bug Fixes</li>
+                        <li>Live Logic Updates & Optimization</li>
+                        <li>Database & Telemetry Support</li>
+                        <li>Automated Bug Fixes</li>
+                        <li>Direct Developer Access</li>
                     </ul>
                 </div>
             </div>
