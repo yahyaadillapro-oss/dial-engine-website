@@ -5,133 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy & Data Policy | DIAL ENGINE™</title>
     <style>
-        /* --- SHARP MIRROR EDGE AESTHETIC --- */
         body {
-            margin: 0;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: #f4f7f9;
-            background: radial-gradient(circle at 50% -20%, #ffffff 0%, #e0eaf5 40%, #c4d7eb 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            box-sizing: border-box;
-            color: #111827;
-            -webkit-font-smoothing: antialiased;
+            margin: 0; font-family: "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+            background: #0078d7; background: radial-gradient(circle at 50% 0%, #b3ebff 0%, #5cb8ff 30%, #0078d7 80%, #004b87 100%);
+            background-attachment: fixed; color: #111827; line-height: 1.6;
+            -webkit-font-smoothing: antialiased; display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; padding: 40px 20px;
         }
-
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.3; z-index: -1; pointer-events: none;
+        }
         .glass-card {
-            max-width: 850px;
-            width: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 2px; /* Sharp corners */
-            border-top: 2px solid rgba(255, 255, 255, 1);
-            border-left: 1px solid rgba(255, 255, 255, 0.9);
-            border-right: 1px solid rgba(255, 255, 255, 0.3);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 30, 60, 0.15), inset 0 1px 0 rgba(255,255,255,1);
-            position: relative;
+            max-width: 850px; width: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border-radius: 8px; border-top: 2px solid rgba(255, 255, 255, 1);
+            border-left: 1px solid rgba(255, 255, 255, 0.8); border-right: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4); padding: 60px;
+            box-shadow: 0 25px 50px rgba(0, 30, 60, 0.3), inset 0 20px 20px -20px rgba(255,255,255,0.8);
             box-sizing: border-box;
         }
-
-        /* The Heavy Blue Gradient Header */
-        .heavy-header {
-            background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
-            padding: 40px 50px;
-            border-bottom: 2px solid rgba(255,255,255,0.9);
-            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
+        .doc-header { border-bottom: 2px solid rgba(255,255,255,0.8); padding-bottom: 20px; margin-bottom: 40px; box-shadow: 0 1px 0 rgba(0,0,0,0.1); }
+        h1 { color: #003366; margin: 0; font-size: 2.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; text-shadow: 0 1px 1px #fff; }
         
-        /* Glass sheen over the blue header */
-        .heavy-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 40%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-            pointer-events: none;
-        }
-
-        .content-body {
-            padding: 40px 60px 60px 60px;
-        }
-
-        h1 {
-            color: white; margin: 0; font-size: 2.2rem; font-weight: 800; letter-spacing: 1px;
-            text-shadow: 0px 2px 4px rgba(0,0,0,0.2); text-transform: uppercase;
-        }
-
         .effective-date {
-            color: #004b87; font-weight: 700; font-size: 1.05rem; margin-bottom: 25px;
-            display: inline-block; padding: 5px 15px; background: rgba(0, 102, 204, 0.1);
-            border-radius: 2px; border-left: 3px solid #0066cc;
+            color: white; font-weight: 800; font-size: 0.95rem; margin-top: 10px; text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+            display: inline-block; padding: 6px 15px; border-radius: 4px; border: 1px solid #004b87;
+            background: linear-gradient(180deg, #00a8ff 0%, #005499 100%);
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.5);
         }
 
-        h2 {
-            color: #004b87; font-size: 1.25rem; margin-top: 35px; margin-bottom: 15px;
-            font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px;
-        }
-
-        p { color: #333; font-size: 1.05rem; line-height: 1.7; font-weight: 500; text-align: justify; margin-bottom: 15px; }
-        .highlight { font-weight: 800; color: #0066cc; }
-
+        h2 { color: #004b87; font-size: 1.25rem; margin-top: 35px; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; }
+        p { color: #222; font-size: 1.05rem; font-weight: 500; text-align: justify; margin-bottom: 15px; }
+        .highlight { font-weight: 800; color: #005a9e; background: rgba(255,255,255,0.5); padding: 2px 6px; border-radius: 4px; }
         .btn-container { margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; text-align: left; }
         
         .back-btn {
-            display: inline-block; padding: 12px 30px; font-weight: 700; font-size: 0.95rem;
-            text-transform: uppercase; text-decoration: none; border-radius: 2px;
-            background: linear-gradient(180deg, #0078d7 0%, #005a9e 100%);
-            color: white; border: 1px solid #004b87; border-top: 1px solid #4da6ff;
-            box-shadow: 0 4px 10px rgba(0, 90, 158, 0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
-            transition: all 0.2s;
+            position: relative; display: inline-block; padding: 12px 30px; font-weight: 800; font-size: 0.95rem;
+            text-transform: uppercase; text-decoration: none; border-radius: 30px;
+            background: linear-gradient(180deg, #ffffff 0%, #dcdcdc 100%); color: #111;
+            border: 1px solid #999; box-shadow: inset 0 1px 2px #fff, 0 6px 15px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 0 #fff; transition: all 0.2s; overflow: hidden;
         }
-
-        .back-btn:hover { filter: brightness(1.1); box-shadow: 0 6px 15px rgba(0, 90, 158, 0.4); }
-
-        @media (max-width: 700px) {
-            .heavy-header { padding: 30px 25px; }
-            .content-body { padding: 30px 25px; }
-            h1 { font-size: 1.8rem; }
-            p { font-size: 1rem; }
+        .back-btn::before {
+            content: ''; position: absolute; top: 1px; left: 1px; right: 1px; height: 45%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+            border-radius: 30px 30px 100px 100px; pointer-events: none;
         }
+        .back-btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+        @media (max-width: 700px) { .glass-card { padding: 40px 25px; } h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
 <div class="glass-card">
-    <div class="heavy-header">
+    <div class="doc-header">
         <h1>Privacy Policy</h1>
+        <div class="effective-date">Effective Date: 18th December 2025</div>
     </div>
 
-    <div class="content-body">
-        <div class="effective-date">Effective Date: 18th December 2025</div>
-        
-        <p>DIAL ENGINE™ is an enterprise-grade sales infrastructure. We operate under strict data sovereignty principles, ensuring your proprietary lead data, PBX routing, and telecommunications telemetry remain securely locked down within your authorized ecosystem.</p>
+    <p>DIAL ENGINE™ is an enterprise-grade sales automation center. We operate under strict data sovereignty principles, ensuring that proprietary lead databases and agent telemetry remain securely locked down within your authorized corporate ecosystem.</p>
 
-        <h2>1. PostgreSQL Data Sovereignty</h2>
-        <p>Unlike standard SaaS CRMs, we do not pool your leads on shared, publicly accessible web servers. All property information, custom lists, and client records are housed in a dedicated PostgreSQL Lead Vault. This vault is secured with advanced AES cryptography, meaning your data is strictly yours and completely shielded from external scraping.</p>
+    <h2>1. Data Sovereignty & Storage</h2>
+    <p>We do not pool your CRM data on shared, publicly accessible web servers. All client records and provisioned terminal data are housed in a dedicated PostgreSQL Lead Vault configured specifically for your firm. This ensures your data is strictly yours and shielded from external analytics scraping.</p>
 
-        <h2>2. Terminal Isolation Protocol</h2>
-        <p>To protect your database, agents operate on strict "Zero-Footprint" Google Workspace terminals. App logic runs locally within your environment. Agents never interact directly with the master PostgreSQL vault, completely eliminating the risk of mass data exports, unauthorized duplication, or internal theft.</p>
+    <h2>2. Terminal Isolation Protocol</h2>
+    <p>To protect the integrity of the master database, deployed agents operate on strict "Zero-Footprint" terminals. The automation logic runs locally. Agents never interact directly with the master database, completely eliminating the risk of mass data exports, unauthorized duplication, or internal theft.</p>
 
-        <h2>3. Telemetry & Administrative Oversight</h2>
-        <p>Our background infrastructure continuously monitors SIP operations, terminal interactions, and transfer logs. This telemetry is stripped of non-essential metadata and streamed asynchronously to a private logging interface <span class="highlight">strictly for administrative oversight</span>. We do not sell, share, or analyze this telemetry for third-party marketing.</p>
+    <h2>3. Telemetry & Administrative Oversight</h2>
+    <p>Our background infrastructure continuously monitors CRM interactions and transfer logs to ensure the smooth operation of large-scale agent floors. This telemetry is streamed asynchronously to a private logging interface <span class="highlight">strictly for administrative oversight and gamification</span>. We do not sell, share, or analyze this telemetry for third-party marketing.</p>
 
-        <h2>4. Total Data Eradication</h2>
-        <p>We enforce total corporate control. Upon the termination or offboarding of any agent, the DIAL ENGINE™ system instantly revokes all SIP credentials and executes a command via Google Drive APIs to permanently delete the agent's assigned terminal. The data is destroyed at the endpoint, ensuring zero retention post-employment.</p>
+    <h2>4. Total Data Eradication</h2>
+    <p>We enforce total corporate control. Upon the termination or offboarding of any agent, the DIAL ENGINE™ system executes an automated cloud command to permanently delete the agent's assigned terminal and revoke access instantly. The data is destroyed at the endpoint, ensuring zero retention post-employment.</p>
 
-        <h2>5. Technical & Compliance Inquiries</h2>
-        <p>For security audits, infrastructure compliance, or direct technical questions regarding our cryptography and data routing, please contact the lead systems developer directly:</p>
-        <p><span class="highlight">Email:</span> <a href="mailto:yahyaadillapro@gmail.com" style="color: #005a9e; text-decoration: none; font-weight: 800;">yahyaadillapro@gmail.com</a></p>
+    <h2>5. Technical & Compliance Inquiries</h2>
+    <p>For security audits, infrastructure compliance, or direct technical questions regarding our data routing and automation logic, please contact the lead systems developer directly:</p>
+    <p><span class="highlight">Email:</span> <a href="mailto:yahyaadillapro@gmail.com" style="color: #004b87; text-decoration: none; font-weight: 800;">yahyaadillapro@gmail.com</a></p>
 
-        <div class="btn-container">
-            <a href="index.html" class="back-btn">← RETURN TO ARCHITECTURE</a>
-        </div>
+    <div class="btn-container">
+        <a href="index.html" class="back-btn">← Return to Architecture</a>
     </div>
 </div>
 
